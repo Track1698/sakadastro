@@ -1,21 +1,15 @@
-# Use the official Python image as the base image
-FROM python:3.12.0
+FROM python:3.10-slim
 
-# Set the working directory in the container
-WORKDIR /app
+ENV PYTHONUNBUFFERED True
 
-# Copy the requirements file into the container at /app
-COPY requirements.txt .
+ENV APP_HOME /app
 
-# Install dependencies
+ENV PORT 5000
+
+WORKDIR $APP_HOME
+
+COPY . ./
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Expose port 8080 for the Flask app
-EXPOSE 8080
-
-
-# Command to run the application
-CMD ["python", "app.py"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app

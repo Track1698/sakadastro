@@ -1,0 +1,32 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.15:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2023 20:01:03] "OPTIONS /api/your_endpoint HTTP/1.1" 200 -
+INFO:root:Processing started for input_kadastr=01.18.05.006.036 
+INFO:root:Attempt 1 started
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
+DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
+DEBUG:root:Coordinates list response data: {'success': True, 'sessionValid': True, 'errorText': None, 'errorCode': None, 'data': [], 'totalCnt': 0}
+ERROR:root:Error in attempt 1: 'NoneType' object is not iterable
+INFO:root:Retrying in 2 seconds...
+INFO:root:Attempt 2 started
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
+DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
+DEBUG:root:Coordinates list response data: {'success': True, 'sessionValid': True, 'errorText': None, 'errorCode': None, 'data': [], 'totalCnt': 0}
+ERROR:root:Error in attempt 2: 'NoneType' object is not iterable
+INFO:root:Retrying in 2 seconds...
+INFO:root:Attempt 3 started
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
+DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
+DEBUG:root:Coordinates list response data: {'success': True, 'sessionValid': True, 'errorText': None, 'errorCode': None, 'data': [], 'totalCnt': 0}
+ERROR:root:Error in attempt 3: 'NoneType' object is not iterable
+INFO:root:Retrying in 2 seconds...
+INFO:root:Attempt 4 started
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
+DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
+DEBUG:root:Coordinates list response data: {'success': True, 'sessionValid': True, 'errorText': None, 'errorCode': None, 'data': [], 'totalCnt': 0}
+ERROR:root:Error in attempt 4: 'NoneType' object is not iterable
+ERROR:root:Max retries reached. Exiting.
+INFO:werkzeug:127.0.0.1 - - [11/Dec/2023 20:01:17] "[35m[1mPOST /api/your_endpoint HTTP/1.1[0m" 500 -
