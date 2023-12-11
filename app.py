@@ -2,13 +2,16 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from final import backend_function
 import traceback  # Import the traceback module
+import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-@app.route('/')
+@app.route("/")
 def hello_world():
-    return 'Hello, World!'
+    """Example Hello World route."""
+    name = os.environ.get("NAME", "World")
+    return f"Hello {name}!"
 
 @app.route('/api/your_endpoint', methods=['POST'])
 def your_api_endpoint():
@@ -30,4 +33,7 @@ def your_api_endpoint():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8080)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+
+
