@@ -111,11 +111,12 @@ def get_coordinates_list(input_kadastr):
 
     try:
         geometry_data = response_data['data'][0]['geometry']
-        #print('Geometry data: ', geometry_data)
         coordinates_str = geometry_data.split("POLYGON ((")[1].split("))")[0]
-        #print('Coordinates string: ', coordinates_str)
+        
+        # Remove trailing ')' if present
+        coordinates_str = coordinates_str.rstrip(')')
+        
         coordinates_list = [tuple(map(float, coord.split())) for coord in coordinates_str.split(",")]
-        #print('Coordinates list: ', coordinates_list)
         return coordinates_list
     except (KeyError, IndexError) as e:
         print(f"Error processing response data: {e}")
