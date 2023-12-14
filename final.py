@@ -1,7 +1,7 @@
 import requests
 from pyproj import Proj, transform
 import json
-from shapely.geometry import Polygon
+from shapely.geometry import Polygon, Point
 from bs4 import BeautifulSoup
 import html
 import warnings
@@ -107,23 +107,27 @@ def get_coordinates_list(input_kadastr):
                               headers=headers3, json=json_data1, timeout=timeout_seconds)
     response_data = json.loads(response1.text)
     #print('Response_data: ', response_data)
-    logging.debug(f"Coordinates list response data: {response_data}")
+    #logging.debug(f"Coordinates list response data: {response_data}")
 
     try:
         geometry_data = response_data['data'][0]['geometry']
+        #logging.debug(f"geometry_data: {geometry_data}")
         coordinates_str = geometry_data.split("POLYGON ((")[1].split("))")[0]
-        
-        # Remove trailing ')' if present
-        coordinates_str = coordinates_str.rstrip(')')
-        
+        #logging.debug(f"coordinates_str1: {coordinates_str}")
+
+        coordinates_str = coordinates_str.replace(')', '')
+        #logging.debug(f"coordinates_str2: {coordinates_str}")
+        coordinates_str = coordinates_str.replace('(', '')
+        #logging.debug(f"coordinates_str3: {coordinates_str}")
+
         coordinates_list = [tuple(map(float, coord.split())) for coord in coordinates_str.split(",")]
+        logging.debug(f"coordinates_list: {coordinates_list}")
+
+
         return coordinates_list
     except (KeyError, IndexError) as e:
         print(f"Error processing response data: {e}")
         return []
-
-
-
 
 
 def get_centroid(coordinates_list):
@@ -131,8 +135,27 @@ def get_centroid(coordinates_list):
     polygon = Polygon(coordinates_list)
     return polygon.centroid
 
-def get_farthest_corners(centroid, coordinates_list):
-    all_combinations = list(combinations(coordinates_list, 4))
+def remove_close_points(coordinates_list, distance_threshold=1.0):
+    filtered_coordinates = []
+    
+    for i, coord1 in enumerate(coordinates_list):
+        include_point = True
+        for coord2 in coordinates_list[:i] + coordinates_list[i+1:]:
+            # Use Euclidean distance between two points
+            distance = Point(coord1).distance(Point(coord2))
+            if distance < distance_threshold:
+                include_point = False
+                break
+        if include_point:
+            filtered_coordinates.append(coord1)
+    
+    return filtered_coordinates
+
+def get_farthest_corners(coordinates_list):
+    # Remove close points to speed up the process
+    filtered_coordinates = remove_close_points(coordinates_list)
+    
+    all_combinations = list(combinations(filtered_coordinates, 4))
     max_area = 0
     farthest_combination = None
 
@@ -154,7 +177,7 @@ def move_towards_center(point, centroid, fraction):
 
 def calculate_final_coordinates(coordinates_list):
     centroid = get_centroid(coordinates_list)
-    farthest_corners = get_farthest_corners(centroid, coordinates_list)
+    farthest_corners = get_farthest_corners(coordinates_list)
 
     # Move each farthest corner 75% towards the center
     moved_coordinates = [move_towards_center(coord, centroid, 0.75) for coord in farthest_corners]
@@ -218,6 +241,39 @@ def handle_msheneblobi(layer_data):
 def handle_gamtsvanebuli(layer_data):
     return {"kategoria": layer_data.get("kategoria")}
 
+def extract_float_value(layer_data, key):
+    value = None
+    for data in layer_data:
+        if key in data and isinstance(data[key], (float, int)):
+            value = data[key]
+            break
+    return value
+
+def extract_k_values(response_json):
+
+    # List to store layers with valid values
+    layers_with_data = []
+
+    # Iterate through layers in the 'data' array
+    for layer in response_json.get('data', []):
+        # Check if 'layerData' is present and not empty
+        if 'layerData' in layer and layer['layerData']:
+            # Extract 'k1', 'k2', and 'k3' values if they exist and are floats
+            k1_value = extract_float_value(layer['layerData'], 'k1')
+            k2_value = extract_float_value(layer['layerData'], 'k2')
+            k3_value = extract_float_value(layer['layerData'], 'k3')
+
+            # Check if valid values are found
+            if k1_value is not None and k2_value is not None and k3_value is not None:
+                layers_with_data.append({
+                    "Layer": layer['layerName'],
+                    "k1": k1_value,
+                    "k2": k2_value,
+                    "k3": k3_value
+                })
+
+    return layers_with_data
+
 def process_layer_data(response_data):
     latest_info = {
         "latest_ganxN": None,
@@ -244,10 +300,6 @@ def process_layer_data(response_data):
             handler_result = layer_handlers.get(layer_name, lambda x: {})(layer_data)
             latest_info.update(handler_result)
 
-            # Check for specific conditions and update latest_info
-            if "k1" in layer_data or "k2" in layer_data or "k3" in layer_data:
-                k_values = handle_saczonakve(layer_data)
-                latest_info.update(k_values)
 
             if layer_name == "კულტურული მემკვიდრეობის უძრავი ძეგლები":
                 latest_info["dzegli"] = True
@@ -267,24 +319,13 @@ def process_layer_data(response_data):
 
     latest_info['kveZona'] = kveZona_value
     latest_info['nebartvislink'] = detailuri_link
-    logging.debug(f"Latest info from process_layer_data: {latest_info}")
+    result = extract_k_values(response_data)[0]
+    logging.debug(f"extracted k value result: {result}")
+    latest_info.update(result)
+    print(f"Latest info from process_layer_data: {latest_info}")
     return latest_info
 
-def handle_saczonakve(layer_data):
-    # Initialize variables
-    k1 = k2 = k3 = None
 
-    # Iterate through layer data to find the layer with the desired columns
-    for layer in layer_data:
-        if "k1" in layer and "k2" in layer and "k3" in layer:
-            k1 = layer.get("k1")
-            k2 = layer.get("k2")
-            k3 = layer.get("k3")
-            break  # Stop iterating once the desired layer is found
-
-    logging.debug(f"Values of k1, k2, k3: {k1}, {k2}, {k3}")
-
-    return {"k1": k1, "k2": k2, "k3": k3}
 
 
 
@@ -408,8 +449,9 @@ def backend_function(input_kadastr, max_retries=3, retry_delay=2):
     for attempt in range(max_retries + 1):
         try:
             logging.info(f"Attempt {attempt + 1} started")
+            coordinates_list = get_coordinates_list(input_kadastr)
 
-            final_coordinates = calculate_final_coordinates(get_coordinates_list(input_kadastr))
+            final_coordinates = calculate_final_coordinates(coordinates_list)
 
             found_desired_layer = False
 

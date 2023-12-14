@@ -44,7 +44,7 @@ def create_app():
      return jsonify(response_body)
 
 
-  @app.route('/api/your_endpoint', methods=['POST'])
+  @app.route('/api/getinformation', methods=['POST'])
   def your_api_endpoint():
      try:
          data = request.get_json()
