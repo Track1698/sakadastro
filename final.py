@@ -106,24 +106,22 @@ def get_coordinates_list(input_kadastr):
     response1 = requests.post('https://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/process.do',
                               headers=headers3, json=json_data1, timeout=timeout_seconds)
     response_data = json.loads(response1.text)
-    #print('Response_data: ', response_data)
-    #logging.debug(f"Coordinates list response data: {response_data}")
+    logging.debug(f"Coordinates list response data: {response1.text}")
 
     try:
+        success = response_data.get('success', False)
+        if success and 'data' in response_data and not response_data['data']:
+            # Handle the case when success is True, but there is no data
+            logging.warning("Success is True, but no data found in the response.")
+            return "ArasworiSakadastro"  # Replace with your desired error code or value
+
+        
         geometry_data = response_data['data'][0]['geometry']
-        #logging.debug(f"geometry_data: {geometry_data}")
         coordinates_str = geometry_data.split("POLYGON ((")[1].split("))")[0]
-        #logging.debug(f"coordinates_str1: {coordinates_str}")
-
         coordinates_str = coordinates_str.replace(')', '')
-        #logging.debug(f"coordinates_str2: {coordinates_str}")
         coordinates_str = coordinates_str.replace('(', '')
-        #logging.debug(f"coordinates_str3: {coordinates_str}")
-
         coordinates_list = [tuple(map(float, coord.split())) for coord in coordinates_str.split(",")]
         logging.debug(f"coordinates_list: {coordinates_list}")
-
-
         return coordinates_list
     except (KeyError, IndexError) as e:
         print(f"Error processing response data: {e}")
@@ -450,7 +448,11 @@ def backend_function(input_kadastr, max_retries=3, retry_delay=2):
         try:
             logging.info(f"Attempt {attempt + 1} started")
             coordinates_list = get_coordinates_list(input_kadastr)
-
+            
+            if coordinates_list == "ArasworiSakadastro":
+                logging.warning("Error in coordinates result. Returning error response.")
+                return {"error": "ArasworiSakadastro"}
+            
             final_coordinates = calculate_final_coordinates(coordinates_list)
 
             found_desired_layer = False
