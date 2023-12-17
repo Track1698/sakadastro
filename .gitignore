@@ -1,0 +1,7 @@
+# Logs
+logs
+*.log
+
+#pycache
+
+__pycahce__ 
