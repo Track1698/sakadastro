@@ -102,7 +102,7 @@ def get_coordinates_list(input_kadastr):
     base_headers = get_base_headers()
     headers3 = get_headers3()
     json_data1 = {'searchText': input_kadastr, 'orgId': 1, 'action': 'mapsearchws/searchAll'}
-
+    second_source = False
     response1 = requests.post('https://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/process.do',
                               headers=headers3, json=json_data1, timeout=timeout_seconds)
     response_data = json.loads(response1.text)
@@ -110,49 +110,82 @@ def get_coordinates_list(input_kadastr):
 
     try:
         success = response_data.get('success', False)
-        if success and 'data' in response_data and not response_data['data']:
-            # Handle the case when success is True, but there is no data
-            logging.warning("Success is True, but no data found in the response.")
-            return "ArasworiSakadastro"  # Replace with your desired error code or value
+        if success:
+            data = response_data.get('data', [])
+            if not data:
+                # Handle the case when success is True, but there is no data
+                logging.warning("Success is True, but no data found in the response.")
+                return "ArasworiSakadastro"  # Replace with your desired error code or value
+            
+            # Check if 'geometry' is present and not None
+            geometry_data = data[0].get('geometry')
+            logging.debug(f"Coordinates from First source: {geometry_data}")
+            if geometry_data:
+                # Handle the case when 'geometry' is None
+                logging.debug(f"Couldn't get coordinates from first source")
+                geometry_data = fetch_additional_info(input_kadastr, 2)
+                logging.debug(f"Coordinates from second source: {geometry_data}")
+                second_source = True
+            
+            coordinates_str = geometry_data.split("POLYGON ((")[1].split("))")[0]
+            coordinates_str = coordinates_str.replace(')', '')
+            coordinates_str = coordinates_str.replace('(', '')
+            coordinates_list = [tuple(map(float, coord.split())) for coord in coordinates_str.split(",")]
+            logging.debug(f"coordinates_list final: {coordinates_list}")
+            return coordinates_list, second_source
+        else:
+            logging.warning("Success is False in the response.")
+            return "Error"  # Replace with your desired error code or value
 
-        
-        geometry_data = response_data['data'][0]['geometry']
-        coordinates_str = geometry_data.split("POLYGON ((")[1].split("))")[0]
-        coordinates_str = coordinates_str.replace(')', '')
-        coordinates_str = coordinates_str.replace('(', '')
-        coordinates_list = [tuple(map(float, coord.split())) for coord in coordinates_str.split(",")]
-        logging.debug(f"coordinates_list: {coordinates_list}")
-        return coordinates_list
     except (KeyError, IndexError) as e:
-        print(f"Error processing response data: {e}")
+        logging.error(f"Error processing response data: {e}")
         return []
 
 
 def get_centroid(coordinates_list):
-    #print(coordinates_list)
     polygon = Polygon(coordinates_list)
     return polygon.centroid
 
-def remove_close_points(coordinates_list, distance_threshold=1.0):
+from shapely.geometry import Point, Polygon
+from itertools import combinations
+
+def calculate_threshold(coordinates_list, distance_threshold_ratio=1e-5):
+    num_coordinates = len(coordinates_list)
+
+    # Calculate a dynamic threshold based on the number of coordinates
+    target_num_coordinates = max(min(num_coordinates, 15), 10)
+    dynamic_threshold = distance_threshold_ratio * (1 / target_num_coordinates)
+
+    return dynamic_threshold
+
+def remove_close_points(coordinates_list, distance_threshold_ratio=1e-5):
+    num_coordinates = len(coordinates_list)
+    dynamic_threshold = calculate_threshold(coordinates_list, distance_threshold_ratio)
+
     filtered_coordinates = []
-    
+
     for i, coord1 in enumerate(coordinates_list):
         include_point = True
         for coord2 in coordinates_list[:i] + coordinates_list[i+1:]:
             # Use Euclidean distance between two points
             distance = Point(coord1).distance(Point(coord2))
-            if distance < distance_threshold:
+            
+            # Use the dynamically calculated threshold
+            if distance < dynamic_threshold:
                 include_point = False
                 break
         if include_point:
             filtered_coordinates.append(coord1)
-    
+
     return filtered_coordinates
 
 def get_farthest_corners(coordinates_list):
     # Remove close points to speed up the process
-    filtered_coordinates = remove_close_points(coordinates_list)
-    
+    if len(coordinates_list) > 15:
+        filtered_coordinates = remove_close_points(coordinates_list)
+    else:
+        filtered_coordinates = coordinates_list
+
     all_combinations = list(combinations(filtered_coordinates, 4))
     max_area = 0
     farthest_combination = None
@@ -165,15 +198,20 @@ def get_farthest_corners(coordinates_list):
             max_area = area
             farthest_combination = combination
 
-    return list(farthest_combination)
+    if farthest_combination is not None:
+        return list(farthest_combination)
+    else:
+        print("No valid combination found.")
+        return None
+
+
 
 def move_towards_center(point, centroid, fraction):
     new_x = point[0] + (centroid.x - point[0]) * (1 - fraction)
     new_y = point[1] + (centroid.y - point[1]) * (1 - fraction)
     return new_x, new_y
 
-
-def calculate_final_coordinates(coordinates_list):
+def calculate_final_coordinates(coordinates_list, source_epsg, target_epsg):
     centroid = get_centroid(coordinates_list)
     farthest_corners = get_farthest_corners(coordinates_list)
 
@@ -183,18 +221,21 @@ def calculate_final_coordinates(coordinates_list):
     # Add the centroid to the list of coordinates
     final_coordinates = [(centroid.x, centroid.y)] + moved_coordinates
 
-    # Transform the coordinates to the desired EPSG code
-    final_coordinates = [transform_coordinates(coord) for coord in final_coordinates]
+    # Transform the coordinates if needed
+    if source_epsg != target_epsg:
+        final_coordinates = [transform_coordinates(coord, source_epsg, target_epsg) for coord in final_coordinates]
 
     return final_coordinates
 
-def transform_coordinates(coord):
-    source_epsg = 'EPSG:900913'
-    target_epsg = 'EPSG:4326'
-    x, y = coord
-    transformer = Proj(init=source_epsg), Proj(init=target_epsg)
-    lon, lat = transform(transformer[0], transformer[1], x, y)
-    return lon, lat
+def transform_coordinates(coord, source_epsg, target_epsg):
+    if source_epsg != target_epsg:
+        x, y = coord
+        transformer = Proj(init=source_epsg), Proj(init=target_epsg)
+        lon, lat = transform(transformer[0], transformer[1], x, y)
+        return lon, lat
+    else:
+        # If source EPSG code matches the target EPSG code, no transformation is needed
+        return coord
 
 def get_json_data_lrs(lon, lat):
     return {
@@ -320,7 +361,7 @@ def process_layer_data(response_data):
     result = extract_k_values(response_data)[0]
     logging.debug(f"extracted k value result: {result}")
     latest_info.update(result)
-    print(f"Latest info from process_layer_data: {latest_info}")
+    #print(f"Latest info from process_layer_data: {latest_info}")
     return latest_info
 
 
@@ -388,7 +429,7 @@ def fetch_sakadastro_pdf_link(input_kadastr):
     else:
         print(f"Failed to fetch URL. Status code: {response2.status_code}")
 
-def fetch_additional_info(input_kadastr):
+def fetch_additional_info(input_kadastr, id):
     data = {
         'keyword': input_kadastr,
         'keyword_description[coords][]': '',
@@ -410,16 +451,30 @@ def fetch_additional_info(input_kadastr):
         logging.debug(f"Response from map/portal/search: {data}")
         result_link_value = data["result"][0]["resultlink"]
         result_link_value_without_prefix = result_link_value.replace("/map/portal/getbylbl?lbl=", "")
-        response2 = requests.get(
-            f'https://maps.gov.ge/lr/bo/mg/getinfo.alpha?lbl={result_link_value_without_prefix}&lang=ka',
-            headers=headers,
-        )
-        soup = BeautifulSoup(response2.text, 'html.parser')
-        logging.debug(f"Response from response2 in fetch_additional_info: {response2.text}")
-        visible_text_array = [element.get_text(strip=True) for element in soup.find_all(
-            lambda x: x.name not in ['script', 'style']) if element.get_text(strip=True)]
+        if id == 1:
+            response2 = requests.get(
+                f'https://maps.gov.ge/lr/bo/mg/getinfo.alpha?lbl={result_link_value_without_prefix}&lang=ka',
+                headers=headers,
+            )
+            soup = BeautifulSoup(response2.text, 'html.parser')
+            logging.debug(f"Response from response2 in fetch_additional_info: {response2.text}")
+            visible_text_array = [element.get_text(strip=True) for element in soup.find_all(
+                lambda x: x.name not in ['script', 'style']) if element.get_text(strip=True)]
 
-        return extract_additional_info(visible_text_array)
+            return extract_additional_info(visible_text_array)
+        else:
+            response2 = requests.get(
+                f'https://maps.gov.ge/lr/bo/mg/getinfo.alpha?lbl={result_link_value_without_prefix}&lang=ka&bbox=4985540.514541853,5117024.188684258,4985688.999363005,5117107.711396155&res=shp',
+                headers=headers,
+            )
+            response_data = json.loads(response2.text)
+
+            # Extract coordinates from the "shape" field
+            #coordinates = []
+            for item in response_data.get("data", []):
+                shape = item.get("shape")
+                logging.debug(f"shape from second source: {shape}")
+            return shape
     
 
 def extract_additional_info(visible_text_array):
@@ -447,13 +502,20 @@ def backend_function(input_kadastr, max_retries=3, retry_delay=2):
     for attempt in range(max_retries + 1):
         try:
             logging.info(f"Attempt {attempt + 1} started")
-            coordinates_list = get_coordinates_list(input_kadastr)
+            coordinates_list, returned_second_source = get_coordinates_list(input_kadastr)
             
             if coordinates_list == "ArasworiSakadastro":
                 logging.warning("Error in coordinates result. Returning error response.")
                 return {"error": "ArasworiSakadastro"}
+                
+            if returned_second_source == False:
+                final_coordinates = calculate_final_coordinates(coordinates_list, source_epsg='EPSG:900913', target_epsg='EPSG:4326')
+                transformed_coordinates = [transform_coordinates(coord, source_epsg='EPSG:900913', target_epsg='EPSG:4326') for coord in coordinates_list]
+            else:
+                final_coordinates = calculate_final_coordinates(coordinates_list, source_epsg='EPSG:4326', target_epsg='EPSG:4326')
+                transformed_coordinates = coordinates_list
             
-            final_coordinates = calculate_final_coordinates(coordinates_list)
+            
 
             found_desired_layer = False
 
@@ -489,9 +551,10 @@ def backend_function(input_kadastr, max_retries=3, retry_delay=2):
             amonaweri_pdf = fetch_amonaweri_pdf_link(input_kadastr)
             sakadastro_pdf = fetch_sakadastro_pdf_link(input_kadastr)
 
-            fartobi, zoma, nakveti, misamarti, sakutreba, mesakutre = fetch_additional_info(input_kadastr)
+            fartobi, zoma, nakveti, misamarti, sakutreba, mesakutre = fetch_additional_info(input_kadastr, 1)
             logging.debug(f"Fartobi: {fartobi}, Zoma: {zoma}, Nakveti: {nakveti}, Misamarti: {misamarti}, "
                           f"Sakutreba: {sakutreba}, Mesakutre: {mesakutre}")
+            
 
             result = {
                 "latest_ganxN": latest_info["latest_ganxN"],
@@ -510,7 +573,7 @@ def backend_function(input_kadastr, max_retries=3, retry_delay=2):
                 'misamarti': misamarti,
                 'sakutreba': sakutreba,
                 'mesakutre': mesakutre,
-                'transformed_coordinates': [transform_coordinates(coord) for coord in get_coordinates_list(input_kadastr)],
+                'transformed_coordinates': transformed_coordinates,
                 'kadastrback': input_kadastr,
                 'centroidx': each_coordinate[0],
                 'centroidy': each_coordinate[1],

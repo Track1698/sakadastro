@@ -53,7 +53,7 @@ def create_app():
 
          if input_kadastr:
              result = backend_function(input_kadastr)
-             print('Successo:', result)
+             print('Success:', result)
              return jsonify(result)
          else:
              return jsonify({"error": "Missing input_kadastr"}), 400
