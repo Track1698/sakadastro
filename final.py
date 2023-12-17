@@ -120,7 +120,7 @@ def get_coordinates_list(input_kadastr):
             # Check if 'geometry' is present and not None
             geometry_data = data[0].get('geometry')
             logging.debug(f"Coordinates from First source: {geometry_data}")
-            if geometry_data:
+            if geometry_data == None:
                 # Handle the case when 'geometry' is None
                 logging.debug(f"Couldn't get coordinates from first source")
                 geometry_data = fetch_additional_info(input_kadastr, 2)
