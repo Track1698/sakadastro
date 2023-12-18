@@ -1,542 +1,35 @@
-DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
-DEBUG:root:Coordinates list response data: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"appId":"01.14.11.012.001","geometry":"POLYGON ((4984553.51188484 5117247.72490731, 4984534.39965835 5117250.0382001, 4984532.37046654 5117231.35184807, 4984545.73754073 5117229.8126771, 4984567.78238309 5117226.99903893, 4984570.54542521 5117245.63261851, 4984570.68088852 5117246.54598546, 4984567.61225241 5117246.90104485, 4984567.59713968 5117246.79450059, 4984553.51188484 5117247.72490731))","type":"რეგისტრირებული ნაკვეთი"}],"totalCnt":0}
-DEBUG:root:Coordinates from First source: POLYGON ((4984553.51188484 5117247.72490731, 4984534.39965835 5117250.0382001, 4984532.37046654 5117231.35184807, 4984545.73754073 5117229.8126771, 4984567.78238309 5117226.99903893, 4984570.54542521 5117245.63261851, 4984570.68088852 5117246.54598546, 4984567.61225241 5117246.90104485, 4984567.59713968 5117246.79450059, 4984553.51188484 5117247.72490731))
-DEBUG:root:coordinates_list final: [(4984553.51188484, 5117247.72490731), (4984534.39965835, 5117250.0382001), (4984532.37046654, 5117231.35184807), (4984545.73754073, 5117229.8126771), (4984567.78238309, 5117226.99903893), (4984570.54542521, 5117245.63261851), (4984570.68088852, 5117246.54598546), (4984567.61225241, 5117246.90104485), (4984567.59713968, 5117246.79450059), (4984553.51188484, 5117247.72490731)]
-DEBUG:root:Coordinates list from first source: [(4984553.51188484, 5117247.72490731), (4984534.39965835, 5117250.0382001), (4984532.37046654, 5117231.35184807), (4984545.73754073, 5117229.8126771), (4984567.78238309, 5117226.99903893), (4984570.54542521, 5117245.63261851), (4984570.68088852, 5117246.54598546), (4984567.61225241, 5117246.90104485), (4984567.59713968, 5117246.79450059), (4984553.51188484, 5117247.72490731)]
-DEBUG:root:Sending request with json_data_lrs: {'action': 'managelayersws/getLayersInfos', 'lrsIds': '1007,323,16,11905,11887,11873,11886,11866,11865,11888,11867,11881,11884,11874,11891,11875,11868,11885,11870,11871,11877,11878,11882,11880,11889,11869,11872,11876,11883,11879,11890,13047,11822,11821,95,117,12295,11805,122,11811,11848,11810,11812,119,120,92,114,11813,13045,13305,11808,12585,11824,10520,11706,12766,10322,12911,12910,13330', 'x': 44.77698760807759, 'y': 41.70732628776659, 'orgId': 1}
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
-DEBUG:root:Response from main: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"layerName":"რეგისტრირებული მიწის ნაკვეთები","layerIndex":16,"clientId":0,"layerData":[{"ქალაქგეგმარებითი დასკვნის მომზადება":"<a href='http://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/printCadcodeIntersections.do?language=ge&orgId=&cadcode=01.14.11.012.001' target='_blank'><img style='height: 16px;' src='resources/imgs/cadcode-intersections.png' /></a>","საჯარო რეესტრის ინფორმაცია":"<a href='http://abstract.reestri.gov.ge/abstract/cad_amo.php?cad_code=01.14.11.012.001' target='_blank'><img src='resources/imgs/napr.png' /></a>","საკადასტრო კოდი":"01.14.11.012.001"}],"columnsData":null},{"layerName":"საცხოვრებელი ზონა 6 (სზ-6)","layerIndex":11870,"clientId":1,"layerData":[{"zona":"საცხოვრებელი ზონა","kveZona":"საცხოვრებელი ზონა-6","featurePhotoes":[],"k1":0.5,"k2":2.5,"k3":0.3,"geometry":"POLYGON ((4984608.9300692 5117284.9035947, 4984607.91943489 5117277.57815774, 4984603.78950454 5117278.38161416, 4984602.18433752 5117263.69422799, 4984600.90645308 5117252.02343078, 4984601.01218236 5117252.01403499, 4984604.35096062 5117251.71419383, 4984603.38026308 5117244.6787183, 4984602.62905559 5117239.23467551, 4984609.11663465 5117237.37457146, 4984613.10987778 5117235.91682436, 4984613.34956971 5117238.08125471, 4984613.87423801 5117242.80334901, 4984616.82891203 5117241.96407357, 4984617.11344827 5117246.20110373, 4984618.99775026 5117263.6447541, 4984619.31546828 5117263.72266976, 4984619.51222071 5117265.10331526, 4984621.14751651 5117276.56768243, 4984622.20993942 5117287.27523541, 4984622.49205359 5117290.11467979, 4984624.11051763 5117304.22407871, 4984626.38298403 5117313.19927806, 4984628.77588489 5117332.68114009, 4984630.61709204 5117347.64591209, 4984631.5871443 5117355.56842756, 4984632.31636737 5117361.50632705, 4984657.94691961 5117358.33440015, 4984665.5320469 5117357.30521857, 4984665.51091624 5117357.09268869, 4984666.48446777 5117356.94276815, 4984666.50918218 5117357.21870066, 4984670.6425888 5117356.84433353, 4984670.59472194 5117356.30939541, 4984672.15162805 5117356.06951968, 4984675.79223562 5117356.42222761, 4984677.07310463 5117356.5458803, 4984678.76638919 5117356.39822285, 4984693.85901138 5117355.0764338, 4984700.86401509 5117354.64890204, 4984700.71522528 5117352.8220642, 4984700.85635486 5117352.73136809, 4984701.20978474 5117352.50315198, 4984701.8587531 5117351.97646146, 4984702.77769684 5117351.20589375, 4984703.43930529 5117350.55043458, 4984704.03148777 5117349.78318623, 4984704.09941905 5117349.69512146, 4984704.74897325 5117348.57452308, 4984705.37658304 5117347.4540024, 4984705.53985378 5117346.92108778, 4984705.80289539 5117346.04151384, 4984706.18411771 5117344.47150025, 4984707.37915394 5117343.99322811, 4984708.29827394 5117343.62316676, 4984706.11873437 5117336.10301937, 4984705.85035314 5117336.19499837, 4984705.71201046 5117336.24258883, 4984704.95004244 5117333.76962809, 4984701.65747131 5117323.08487862, 4984694.53507887 5117300.74244496, 4984693.48512569 5117297.0867109, 4984690.74213595 5117287.54099878, 4984688.77020217 5117281.09695727, 4984687.14551446 5117275.79179913, 4984681.72816602 5117268.18610153, 4984679.72078311 5117260.17851583, 4984676.19422056 5117246.11408329, 4984674.85230157 5117241.00629804, 4984673.15524776 5117234.55171349, 4984672.26071174 5117229.62344983, 4984671.04408374 5117222.93413937, 4984669.31318038 5117219.65944274, 4984664.56813602 5117210.68734403, 4984662.02419724 5117205.86965502, 4984654.09639213 5117190.85604611, 4984653.79971759 5117191.02517479, 4984653.40908898 5117191.25584086, 4984648.56597626 5117193.74595444, 4984642.75855937 5117196.80181647, 4984643.3680056 5117197.80142086, 4984643.63316054 5117198.23457209, 4984623.71649254 5117209.07920547, 4984614.25291109 5117212.74754911, 4984613.42288476 5117210.84093855, 4984609.86804528 5117212.17397423, 4984610.05346083 5117212.70778404, 4984610.5664236 5117214.17869026, 4984607.54868687 5117215.3489964, 4984602.45598996 5117217.32593363, 4984596.45210582 5117218.98475084, 4984588.76577884 5117221.10940354, 4984588.59125441 5117220.45152231, 4984588.31228726 5117219.40764303, 4984584.68058982 5117220.39584163, 4984585.10216863 5117222.12357502, 4984576.81877354 5117224.4162975, 4984571.44486875 5117225.90348113, 4984570.83580419 5117223.82378037, 4984569.11895738 5117224.19242337, 4984569.39251888 5117225.61959941, 4984569.54805607 5117226.4277206, 4984568.31926707 5117226.76660655, 4984568.10176366 5117226.43148491, 4984567.89478187 5117226.11532778, 4984567.15561781 5117226.23199998, 4984560.22966279 5117227.3274037, 4984553.75927192 5117227.96976311, 4984550.8349133 5117228.26059017, 4984550.29019671 5117228.31329957, 4984548.3118128 5117228.5067954, 4984532.45702498 5117230.42388296, 4984533.92093489 5117246.14085888, 4984535.21738158 5117255.46174408, 4984536.51494113 5117267.72154033, 4984536.06575531 5117267.77543776, 4984536.94522617 5117274.83380037, 4984537.99839921 5117283.28283087, 4984538.4836047 5117287.62502847, 4984539.41255629 5117295.93930547, 4984541.16572663 5117308.92680531, 4984541.47720683 5117312.04394805, 4984541.70398973 5117314.2794122, 4984543.18707757 5117328.90142849, 4984543.62399332 5117333.13634319, 4984544.59762201 5117342.54820357, 4984545.4801405 5117351.17870141, 4984545.77459723 5117354.0493583, 4984547.38157898 5117369.66523331, 4984569.60019983 5117367.50823178, 4984573.53747701 5117367.12560696, 4984577.82357263 5117366.69580401, 4984613.99574143 5117363.06033044, 4984610.68299613 5117334.20389177, 4984608.43005283 5117315.15284032, 4984608.00411852 5117312.3589483, 4984607.86857471 5117311.47512308, 4984607.42302237 5117308.60946113, 4984607.12554035 5117306.69951159, 4984606.75467512 5117303.35685116, 4984605.56223654 5117292.63886845, 4984604.80659672 5117285.84809124, 4984604.81061566 5117285.84622136, 4984606.21143452 5117285.52630921, 4984608.9300692 5117284.9035947))","featureDocuments":[]}],"columnsData":[{"configOrder":3986,"columnTitle":"ზონა","columnName":"zona","isHidden":0},{"configOrder":3987,"columnTitle":"ქვე-ზონა","columnName":"kveZona","isHidden":0},{"configOrder":3988,"columnTitle":"კ-1","columnName":"k1","isHidden":0},{"configOrder":3989,"columnTitle":"კ-2","columnName":"k2","isHidden":0},{"configOrder":3990,"columnTitle":"კ-3","columnName":"k3","isHidden":0}]},{"layerName":"შენობა-ნაგებობები","layerIndex":12766,"clientId":1,"layerData":[{"nStorey":5.0,"nomeri1":"75","addrGeo":"ვ. ბარნოვის ქ. 75","geometry":"POLYGON ((4984553.44941478 5117243.41364315, 4984555.41039014 5117243.12299721, 4984555.79325618 5117245.12529194, 4984559.59414728 5117244.73896554, 4984559.87010569 5117246.74098263, 4984569.30582841 5117245.75121463, 4984570.61771065 5117245.62045007, 4984570.62287027 5117243.61902938, 4984568.58718905 5117228.56472201, 4984568.31766628 5117226.7647221, 4984567.89813525 5117226.11211315, 4984560.22792231 5117227.32780209, 4984550.83918701 5117228.26369032, 4984548.30954093 5117228.50571504, 4984532.45581798 5117230.42495428, 4984534.79284035 5117255.50630404, 4984535.21417411 5117255.46025836, 4984553.33654807 5117253.39916939, 4984554.44757694 5117253.27419729, 4984553.44941478 5117243.41364315))"}],"columnsData":[{"configOrder":4373,"columnTitle":"მისამართი","columnName":"addrGeo","isHidden":0},{"configOrder":4374,"columnTitle":"ნომერი","columnName":"nomeri1","isHidden":0},{"configOrder":4376,"columnTitle":"სართული","columnName":"nStorey","isHidden":0}]}],"totalCnt":0}
-DEBUG:root:extracted k value result: {'Layer': 'საცხოვრებელი ზონა 6 (სზ-6)', 'k1': 0.5, 'k2': 2.5, 'k3': 0.3}
-DEBUG:root:Latest info inside loop: {'latest_ganxN': None, 'nebartvislink': None, 'address': None, 'k1': 0.5, 'k2': 2.5, 'k3': 0.3, 'kategoria': None, 'dzegli': False, 'kveZona': 'საცხოვრებელი ზონა-6', 'Layer': 'საცხოვრებელი ზონა 6 (სზ-6)'}
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): abstract.reestri.gov.ge:80
-DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=01.14.11.012.001 HTTP/1.1" 200 2005
-DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>áá á¡ááá£áá áááá£áááá¢ááá</title>
-        <style type="text/css">
-            <!--
-
-            .style2 {
-                font-size: 14px;
-                font-weight: bold;
-                color: #0000FF;
-            }
-
-            .style0 {
-                font-size: 13px;
-                background-color:#EEEEEE;
-                cursor:pointer;
-            }
-
-            .style1 {
-                font-size: 13px;
-                background-color:#DDDDDD;
-                cursor:pointer;
-            }
-
-            .style01 {
-                font-size: 13px;
-                background-color:#999999;
-                color:#FFFFFF;
-                cursor:pointer;
-            }
-
-            .style11 {
-                font-size: 13px;
-                background-color:#999999;
-                color:#FFFFFF;
-                cursor:pointer;
-            }
-            -->
-        </style>
-
-        <script type="text/javascript">
-            function move1(n)
-            {
-                if ((document.getElementById(n).className == "style0") || (document.getElementById(n).className == "style1"))
-                {
-                    document.getElementById(n).className = document.getElementById(n).className + '1';
-                }
-            }
-
-            function move2(n)
-            {
-                if (document.getElementById(n).className == "style01")
-                {
-                    document.getElementById(n).className = "style0";
-                }
-
-                if (document.getElementById(n).className == "style11")
-                {
-                    document.getElementById(n).className = "style1";
-                }
-            }
-            
-            
-            function openWindow(url){
-                window.open(url, 'displayWindow', 'alwaysRaised=yes,resizable=yes,titlebar=no,scrollbars=yes,menubar=no');
-            }
-            
-        </script>
-
-    </head>
-
-    <body style="margin:0; border:none; background-image:url(bg.gif)">
-        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxivZ16HAHe]gvMa5FO2WZbG');" id="25126578" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixguoby2fx9GOKRzz9ZF5n[r');" id="24942025" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGuavWSqqkBeXGvBfY240[K');" id="22149534" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFrAVGEodzamQEp8tyOe2Vm6');" id="22147692" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNCjWsuzEvELLfh8qKpLI0Nw');" id="19898804" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYwfDTZQZ]xy9nBY]noGBUxH');" id="19898746" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGC1OKmIDn[JKbjKvOld8TZ1');" id="22036316" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkOdO8BNRdJrvgjvzmoyLAY');" id="22036343" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4GJC[RV3zKD27VYb4DIPbn');" id="19826005" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKq0Lql7wWEaihnPidhsUQHx');" id="20349257" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr00lAGJ3tVHuQ7P3PUerJmnz');" id="22036340" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclCKX2CG641vevjjcD5qoypv');" id="19696156" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klE7s]FubgdhVSLVTrYFHcJy');" id="22036280" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz15OZB]HzPRhcZlx4KVibHVI');" id="18460655" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBqJB7Xq2RoXg74ZkksGyyw');" id="18460726" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNI4ekutr9wdlLhiwkbKCZpS');" id="452257" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012007173659</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;25/10/2007</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;616336</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvHWAEbcH8bbeuZIGhO8G4o7');" id="90105" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012006080229</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;24/11/2006</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;293046</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr></table>
-
-    </body>
-</html>
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): abstract.reestri.gov.ge:80
-DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=01.14.11.012.001 HTTP/1.1" 200 2012
-DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>áá á¡ááá£áá áááá£áááá¢ááá</title>
-        <style type="text/css">
-            <!--
-
-            .style2 {
-                font-size: 14px;
-                font-weight: bold;
-                color: #0000FF;
-            }
-
-            .style0 {
-                font-size: 13px;
-                background-color:#EEEEEE;
-                cursor:pointer;
-            }
-
-            .style1 {
-                font-size: 13px;
-                background-color:#DDDDDD;
-                cursor:pointer;
-            }
-
-            .style01 {
-                font-size: 13px;
-                background-color:#999999;
-                color:#FFFFFF;
-                cursor:pointer;
-            }
-
-            .style11 {
-                font-size: 13px;
-                background-color:#999999;
-                color:#FFFFFF;
-                cursor:pointer;
-            }
-            -->
-        </style>
-
-        <script type="text/javascript">
-            function move1(n)
-            {
-                if ((document.getElementById(n).className == "style0") || (document.getElementById(n).className == "style1"))
-                {
-                    document.getElementById(n).className = document.getElementById(n).className + '1';
-                }
-            }
-
-            function move2(n)
-            {
-                if (document.getElementById(n).className == "style01")
-                {
-                    document.getElementById(n).className = "style0";
-                }
-
-                if (document.getElementById(n).className == "style11")
-                {
-                    document.getElementById(n).className = "style1";
-                }
-            }
-            
-            
-            function openWindow(url){
-                window.open(url, 'displayWindow', 'alwaysRaised=yes,resizable=yes,titlebar=no,scrollbars=yes,menubar=no');
-            }
-            
-        </script>
-
-    </head>
-
-    <body style="margin:0; border:none; background-image:url(bg.gif)">
-        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixguoby2fx9GOKRzz9ZF5n[r');" id="24942025" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxivZ16HAHe]gvMa5FO2WZbG');" id="25126578" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGuavWSqqkBeXGvBfY240[K');" id="22149534" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFrAVGEodzamQEp8tyOe2Vm6');" id="22147692" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYwfDTZQZ]xy9nBY]noGBUxH');" id="19898746" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNCjWsuzEvELLfh8qKpLI0Nw');" id="19898804" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclCKX2CG641vevjjcD5qoypv');" id="19696156" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4GJC[RV3zKD27VYb4DIPbn');" id="19826005" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKq0Lql7wWEaihnPidhsUQHx');" id="20349257" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkOdO8BNRdJrvgjvzmoyLAY');" id="22036343" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGC1OKmIDn[JKbjKvOld8TZ1');" id="22036316" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr00lAGJ3tVHuQ7P3PUerJmnz');" id="22036340" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klE7s]FubgdhVSLVTrYFHcJy');" id="22036280" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz15OZB]HzPRhcZlx4KVibHVI');" id="18460655" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBqJB7Xq2RoXg74ZkksGyyw');" id="18460726" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNI4ekutr9wdlLhiwkbKCZpS');" id="452257" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012007173659</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;25/10/2007</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;616336</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvHWAEbcH8bbeuZIGhO8G4o7');" id="90105" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012006080229</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;24/11/2006</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;293046</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr></table>
-
-    </body>
-</html>
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "POST /map/portal/search HTTP/1.1" 200 764
-DEBUG:root:Response from map/portal/search: {'status': True, 'result': [{'id': 46800, 'name': '01.14.11.012.001', 'descript': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resulttext': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resultlink': '/map/portal/getbylbl?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'details': {'type': 'address', 'mode': 'absolute', 'info_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'geometry_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&res=shp'}, 'geo_coords': '', 'layers': [], 'sdo_gtype': '2003', 'dist': '0', 'rank': '0', 'sdo_srid': '4326', 'shape_wkt': '', 'env': 'alpha'}]}
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "GET /lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&lang=ka HTTP/1.1" 200 None
-DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CADLIST.GETINFO.MAPGOV.ALPHA -->
-<label class="expandable mb-2 info_sidebar_container" data-infotype="immovable" data-index="46800">
-  <input type="checkbox" class="expand_checkbox_el">
-<!-- Expandable tab control -->
-<div>
-    <span class="pl-2 font-sans flex-1 line-clamp-1 title_el">01.14.11.012.001
-      <span class="font-light pl-2"> -რეგისტრირებულია</span>
-    </span>
-    <!-- Color Picker -->
-    <button class="color-picker-wraper-btn mr-4">
-      <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z"></path>
-        <path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25">
-        </path>
-        <circle cx="7.5" cy="10.5" r=".5" fill="currentColor"></circle>
-        <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
-        <circle cx="16.5" cy="10.5" r=".5" fill="currentColor"></circle>
-      </svg>      
-    </button>
-    <input type="color" class="color-picker-el" style="visibility: hidden;width:0px;height:0px;" value="#ffffff">
-    <!-- Open/Close -->
-    <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
-    <!-- Eye -->
-    <button class="hide_geometry_of_item_btn">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-        </path>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-        </path>
-        <line class="hidden" x1="2" y1="22" x2="22" y2="2" stroke-width="2"></line>
-      </svg>
-    </button>
-    <!-- Remove -->
-    <button class="remove_info_sidebar_btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z"></path>
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-<!-- INFO SIDEBAR CONTENT-->
-     <div class="p-2">           
-          <div class="flex items-center mb-2 space-x-2">
-    <div class="px-4 p-2 flex flex-col rounded-lg bg-blue-100">
-      <div class="text-sm text-gray-600">საკადასტრო კოდი</div>
-      <div class="text-lg text-gray-800 font-sans">
-        01.14.11.012.001
-      </div>
-    </div>
-    <div class="px-4 p-2 flex flex-col rounded-lg bg-blue-100">
-      <div class="text-sm text-gray-600">ფართობი</div>
-      <div class="text-lg text-gray-800 font-sans">
-        381<span class="pl-2 text-sm">
-            კვ.მ.
-          </span>
-      </div>
-    </div>
-  </div>
-
-  <div class="p-2 flex flex-col rounded-lg bg-blue-100 divide-y">
-    <div class="p-2">
-      <div class="text-sm text-gray-600">ნაკვეთის ტიპი</div>
-      <div class="text-md text-gray-800">
-        არასასოფლო სამეურნეო
-      </div>
-    </div>
-    <div class="p-2">
-      <div class="text-sm text-gray-600">მისამართი</div>
-      <div class="text-md text-gray-800">
-        ქალაქი თბილისი , ქუჩა ნაფარეული , N 18
-      </div>
-    </div>
-    <div class="p-2">
-      <div class="text-sm text-gray-600">საკუთრების ტიპი</div>
-      <div class="text-md text-gray-800">
-        თანასაკუთრება
-      </div>
-    </div>
-  </div>
-         <div class="font-bold font-mtavruli mt-4 px-2 text-gray-800">მესაკუთრე(ებ)ი</div>
-         <!--begin of MI.OWNERS.ACT.MAPGOV.ALPHA -->
-<div class="divide-y text-gray-800">
-<p class="p-2">ბ.მ. ამხანაგობა  "ნაფარეული"</p>
-
-
-</div>
-<!--END of MI.OWNERS.ACT.MAPGOV.ALPHA -->
-
-         <div class="font-bold font-mtavruli mt-4 p-2 text-gray-800">დოკუმენტ(ებ)ი</div>
-         <!--begin of MI.OUT_DOC_LIST.MAPGOV.ALPHA -->
-<label class="expandable m-2 mb-0">
-          <input type="checkbox">
-          <div>
-            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">საკადასტრო გეგმა&nbsp;(4)</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxiRbgEqo4EXb2[brXnOXiEp" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023356060
-                <span class="font-light">11.04.2023</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixhB0Z1KS]4cJjX92ja5OL1d" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023356060
-                <span class="font-light">11.04.2023</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klFlcxHQN7KNRLyJnQ1AZF9I" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkjVK0KLXUWYaEe7P9HB[sq" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a>
-          </div>
-</label><label class="expandable m-2 mb-0">
-          <input type="checkbox">
-          <div>
-            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">ამონაწერი საჯარო რეესტრიდან&nbsp;(10)</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGL[uGIWU[5gvVgFWlhfgd5" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882022256438
-                <span class="font-light">15.04.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFoo0WwTZwUjnWnVMNUBm08A" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882022256438
-                <span class="font-light">15.04.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr01dulcy6FRu3EusE1IBOu[Z" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGCuQyKoIbYKZCOQzp4s1gwv" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNDnd8ns26e[sfRI[SZatdQI" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021446270
-                <span class="font-light">07.06.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYyD]g[jKFxh4w8iMGZ43RSj" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021446270
-                <span class="font-light">07.06.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz14xCpkt[ESbmjkhbjR0jpKW" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020889362
-                <span class="font-light">25.11.2020</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBN9ngocwq7T0UhgxfPygNy" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020889362
-                <span class="font-light">25.11.2020</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNLWrUYIjA59hEo7b8tIDL]N" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">012007173659
-                <span class="font-light">26.10.2007</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvEwuNC8AKcAOWhLJg4PoziB" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">012006080229
-                <span class="font-light">25.11.2006</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a>
-          </div>
-</label><label class="expandable m-2 mb-0">
-          <input type="checkbox">
-          <div>
-            <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">სიტუაციური ნახაზი&nbsp;(3)</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKpahQ32cRTPfsl3i06DrJfj" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">03.08.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4aOqLDlYWsCrnd6SfM8XN0" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">28.05.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclC2NAazShkkkgRqkRat2KHe" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">07.05.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a>
-          </div>
-</label>
-<!--end of MI.OUT_DOC_LIST.MAPGOV.ALPHA -->
-     </div>
-</label>
-<!--end of BY_CADLIST.GETINFO.MAPGOV.ALPHA -->
-
-
-
-
-DEBUG:root:Fartobi: 381კვ.მ., Zoma: კვ.მ., Nakveti: არასასოფლო სამეურნეო, Misamarti: ქალაქი თბილისი , ქუჩა ნაფარეული , N 18, Sakutreba: თანასაკუთრება, Mesakutre: ბ.მ. ამხანაგობა  "ნაფარეული"
-INFO:root:Processing completed for input_kadastr=01.14.11.012.001
-INFO:werkzeug:127.0.0.1 - - [17/Dec/2023 14:47:28] "POST /api/getinformation HTTP/1.1" 200 -
+DEBUG:urllib3.util.retry:Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
- * Running on http://192.168.100.15:5000
+ * Running on http://192.168.100.7:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [17/Dec/2023 14:48:41] "OPTIONS /api/getinformation HTTP/1.1" 200 -
-INFO:root:Processing started for input_kadastr=01.14.11.012.001
+INFO:werkzeug:127.0.0.1 - - [19/Dec/2023 00:37:37] "OPTIONS /api/getinformation HTTP/1.1" 200 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): sakadastro-237b3-default-rtdb.europe-west1.firebasedatabase.app:443
+DEBUG:urllib3.connectionpool:https://sakadastro-237b3-default-rtdb.europe-west1.firebasedatabase.app:443 "GET /visitors.json?equalTo=%22127.0.0.1%22&orderBy=%22ip_address%22 HTTP/1.1" 200 2
+DEBUG:urllib3.connectionpool:https://sakadastro-237b3-default-rtdb.europe-west1.firebasedatabase.app:443 "POST /visitors.json HTTP/1.1" 200 31
+INFO:root:Processing started for input_kadastr=81.01.06.427
 INFO:root:Attempt 1 started
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
 DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
-DEBUG:root:Coordinates list response data: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"appId":"01.14.11.012.001","geometry":"POLYGON ((4984553.51188484 5117247.72490731, 4984534.39965835 5117250.0382001, 4984532.37046654 5117231.35184807, 4984545.73754073 5117229.8126771, 4984567.78238309 5117226.99903893, 4984570.54542521 5117245.63261851, 4984570.68088852 5117246.54598546, 4984567.61225241 5117246.90104485, 4984567.59713968 5117246.79450059, 4984553.51188484 5117247.72490731))","type":"რეგისტრირებული ნაკვეთი"}],"totalCnt":0}
-DEBUG:root:Coordinates from First source: POLYGON ((4984553.51188484 5117247.72490731, 4984534.39965835 5117250.0382001, 4984532.37046654 5117231.35184807, 4984545.73754073 5117229.8126771, 4984567.78238309 5117226.99903893, 4984570.54542521 5117245.63261851, 4984570.68088852 5117246.54598546, 4984567.61225241 5117246.90104485, 4984567.59713968 5117246.79450059, 4984553.51188484 5117247.72490731))
-DEBUG:root:Couldn't get coordinates from first source
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "POST /map/portal/search HTTP/1.1" 200 764
-DEBUG:root:Response from map/portal/search: {'status': True, 'result': [{'id': 46800, 'name': '01.14.11.012.001', 'descript': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resulttext': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resultlink': '/map/portal/getbylbl?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'details': {'type': 'address', 'mode': 'absolute', 'info_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'geometry_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&res=shp'}, 'geo_coords': '', 'layers': [], 'sdo_gtype': '2003', 'dist': '0', 'rank': '0', 'sdo_srid': '4326', 'shape_wkt': '', 'env': 'alpha'}]}
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "GET /lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&lang=ka&bbox=4985540.514541853,5117024.188684258,4985688.999363005,5117107.711396155&res=shp HTTP/1.1" 200 504
-DEBUG:root:shape from second source: POLYGON ((44.7770060423779 41.7073870506612, 44.7768343543262 41.7074025645131, 44.776816125786 41.7072772463747, 44.7769362042565 41.7072669240687, 44.7771342364448 41.7072480546634, 44.7771590572745 41.7073730189458, 44.7771602741621 41.7073791443458, 44.7771327081349 41.7073815255144, 44.7771325723749 41.7073808109865, 44.7770060423779 41.7073870506612))
-DEBUG:root:Coordinates from second source: POLYGON ((44.7770060423779 41.7073870506612, 44.7768343543262 41.7074025645131, 44.776816125786 41.7072772463747, 44.7769362042565 41.7072669240687, 44.7771342364448 41.7072480546634, 44.7771590572745 41.7073730189458, 44.7771602741621 41.7073791443458, 44.7771327081349 41.7073815255144, 44.7771325723749 41.7073808109865, 44.7770060423779 41.7073870506612))
-DEBUG:root:coordinates_list final: [(44.7770060423779, 41.7073870506612), (44.7768343543262, 41.7074025645131), (44.776816125786, 41.7072772463747), (44.7769362042565, 41.7072669240687), (44.7771342364448, 41.7072480546634), (44.7771590572745, 41.7073730189458), (44.7771602741621, 41.7073791443458), (44.7771327081349, 41.7073815255144), (44.7771325723749, 41.7073808109865), (44.7770060423779, 41.7073870506612)]
-DEBUG:root:Sending request with json_data_lrs: {'action': 'managelayersws/getLayersInfos', 'lrsIds': '1007,323,16,11905,11887,11873,11886,11866,11865,11888,11867,11881,11884,11874,11891,11875,11868,11885,11870,11871,11877,11878,11882,11880,11889,11869,11872,11876,11883,11879,11890,13047,11822,11821,95,117,12295,11805,122,11811,11848,11810,11812,119,120,92,114,11813,13045,13305,11808,12585,11824,10520,11706,12766,10322,12911,12910,13330', 'x': 44.77698760808862, 'y': 41.707326287733565, 'orgId': 1}
+DEBUG:root:Coordinates list response data: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"appId":"81.01.06.427","geometry":"POLYGON ((4978078.86000851 5110245.41199678, 4978063.87077754 5110256.78239517, 4978043.54536257 5110234.34186908, 4978040.73189006 5110231.10263186, 4978053.06287567 5110224.79535291, 4978058.65006235 5110221.91541281, 4978078.86000851 5110245.41199678))","type":"რეგისტრირებული ნაკვეთი"}],"totalCnt":0}
+DEBUG:root:Coordinates from First source: POLYGON ((4978078.86000851 5110245.41199678, 4978063.87077754 5110256.78239517, 4978043.54536257 5110234.34186908, 4978040.73189006 5110231.10263186, 4978053.06287567 5110224.79535291, 4978058.65006235 5110221.91541281, 4978078.86000851 5110245.41199678))
+DEBUG:root:coordinates_list final: [(4978078.86000851, 5110245.41199678), (4978063.87077754, 5110256.78239517), (4978043.54536257, 5110234.34186908), (4978040.73189006, 5110231.10263186), (4978053.06287567, 5110224.79535291), (4978058.65006235, 5110221.91541281), (4978078.86000851, 5110245.41199678)]
+DEBUG:root:Sending request with json_data_lrs: {'action': 'managelayersws/getLayersInfos', 'lrsIds': '1007,323,16,11905,11887,11873,11886,11866,11865,11888,11867,11881,11884,11874,11891,11875,11868,11885,11870,11871,11877,11878,11882,11880,11889,11869,11872,11876,11883,11879,11890,13047,11822,11821,95,117,12295,11805,122,11811,11848,11810,11812,119,120,92,114,11813,13045,13305,11808,12585,11824,10520,11706,12766,10322,12911,12910,13330', 'x': 44.718676449658616, 'y': 41.66036538498318, 'orgId': 1}
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
 DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
-DEBUG:root:Response from main: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"layerName":"რეგისტრირებული მიწის ნაკვეთები","layerIndex":16,"clientId":0,"layerData":[{"ქალაქგეგმარებითი დასკვნის მომზადება":"<a href='http://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/printCadcodeIntersections.do?language=ge&orgId=&cadcode=01.14.11.012.001' target='_blank'><img style='height: 16px;' src='resources/imgs/cadcode-intersections.png' /></a>","საჯარო რეესტრის ინფორმაცია":"<a href='http://abstract.reestri.gov.ge/abstract/cad_amo.php?cad_code=01.14.11.012.001' target='_blank'><img src='resources/imgs/napr.png' /></a>","საკადასტრო კოდი":"01.14.11.012.001"}],"columnsData":null},{"layerName":"საცხოვრებელი ზონა 6 (სზ-6)","layerIndex":11870,"clientId":1,"layerData":[{"zona":"საცხოვრებელი ზონა","kveZona":"საცხოვრებელი ზონა-6","featurePhotoes":[],"k1":0.5,"k2":2.5,"k3":0.3,"geometry":"POLYGON ((4984608.9300692 5117284.9035947, 4984607.91943489 5117277.57815774, 4984603.78950454 5117278.38161416, 4984602.18433752 5117263.69422799, 4984600.90645308 5117252.02343078, 4984601.01218236 5117252.01403499, 4984604.35096062 5117251.71419383, 4984603.38026308 5117244.6787183, 4984602.62905559 5117239.23467551, 4984609.11663465 5117237.37457146, 4984613.10987778 5117235.91682436, 4984613.34956971 5117238.08125471, 4984613.87423801 5117242.80334901, 4984616.82891203 5117241.96407357, 4984617.11344827 5117246.20110373, 4984618.99775026 5117263.6447541, 4984619.31546828 5117263.72266976, 4984619.51222071 5117265.10331526, 4984621.14751651 5117276.56768243, 4984622.20993942 5117287.27523541, 4984622.49205359 5117290.11467979, 4984624.11051763 5117304.22407871, 4984626.38298403 5117313.19927806, 4984628.77588489 5117332.68114009, 4984630.61709204 5117347.64591209, 4984631.5871443 5117355.56842756, 4984632.31636737 5117361.50632705, 4984657.94691961 5117358.33440015, 4984665.5320469 5117357.30521857, 4984665.51091624 5117357.09268869, 4984666.48446777 5117356.94276815, 4984666.50918218 5117357.21870066, 4984670.6425888 5117356.84433353, 4984670.59472194 5117356.30939541, 4984672.15162805 5117356.06951968, 4984675.79223562 5117356.42222761, 4984677.07310463 5117356.5458803, 4984678.76638919 5117356.39822285, 4984693.85901138 5117355.0764338, 4984700.86401509 5117354.64890204, 4984700.71522528 5117352.8220642, 4984700.85635486 5117352.73136809, 4984701.20978474 5117352.50315198, 4984701.8587531 5117351.97646146, 4984702.77769684 5117351.20589375, 4984703.43930529 5117350.55043458, 4984704.03148777 5117349.78318623, 4984704.09941905 5117349.69512146, 4984704.74897325 5117348.57452308, 4984705.37658304 5117347.4540024, 4984705.53985378 5117346.92108778, 4984705.80289539 5117346.04151384, 4984706.18411771 5117344.47150025, 4984707.37915394 5117343.99322811, 4984708.29827394 5117343.62316676, 4984706.11873437 5117336.10301937, 4984705.85035314 5117336.19499837, 4984705.71201046 5117336.24258883, 4984704.95004244 5117333.76962809, 4984701.65747131 5117323.08487862, 4984694.53507887 5117300.74244496, 4984693.48512569 5117297.0867109, 4984690.74213595 5117287.54099878, 4984688.77020217 5117281.09695727, 4984687.14551446 5117275.79179913, 4984681.72816602 5117268.18610153, 4984679.72078311 5117260.17851583, 4984676.19422056 5117246.11408329, 4984674.85230157 5117241.00629804, 4984673.15524776 5117234.55171349, 4984672.26071174 5117229.62344983, 4984671.04408374 5117222.93413937, 4984669.31318038 5117219.65944274, 4984664.56813602 5117210.68734403, 4984662.02419724 5117205.86965502, 4984654.09639213 5117190.85604611, 4984653.79971759 5117191.02517479, 4984653.40908898 5117191.25584086, 4984648.56597626 5117193.74595444, 4984642.75855937 5117196.80181647, 4984643.3680056 5117197.80142086, 4984643.63316054 5117198.23457209, 4984623.71649254 5117209.07920547, 4984614.25291109 5117212.74754911, 4984613.42288476 5117210.84093855, 4984609.86804528 5117212.17397423, 4984610.05346083 5117212.70778404, 4984610.5664236 5117214.17869026, 4984607.54868687 5117215.3489964, 4984602.45598996 5117217.32593363, 4984596.45210582 5117218.98475084, 4984588.76577884 5117221.10940354, 4984588.59125441 5117220.45152231, 4984588.31228726 5117219.40764303, 4984584.68058982 5117220.39584163, 4984585.10216863 5117222.12357502, 4984576.81877354 5117224.4162975, 4984571.44486875 5117225.90348113, 4984570.83580419 5117223.82378037, 4984569.11895738 5117224.19242337, 4984569.39251888 5117225.61959941, 4984569.54805607 5117226.4277206, 4984568.31926707 5117226.76660655, 4984568.10176366 5117226.43148491, 4984567.89478187 5117226.11532778, 4984567.15561781 5117226.23199998, 4984560.22966279 5117227.3274037, 4984553.75927192 5117227.96976311, 4984550.8349133 5117228.26059017, 4984550.29019671 5117228.31329957, 4984548.3118128 5117228.5067954, 4984532.45702498 5117230.42388296, 4984533.92093489 5117246.14085888, 4984535.21738158 5117255.46174408, 4984536.51494113 5117267.72154033, 4984536.06575531 5117267.77543776, 4984536.94522617 5117274.83380037, 4984537.99839921 5117283.28283087, 4984538.4836047 5117287.62502847, 4984539.41255629 5117295.93930547, 4984541.16572663 5117308.92680531, 4984541.47720683 5117312.04394805, 4984541.70398973 5117314.2794122, 4984543.18707757 5117328.90142849, 4984543.62399332 5117333.13634319, 4984544.59762201 5117342.54820357, 4984545.4801405 5117351.17870141, 4984545.77459723 5117354.0493583, 4984547.38157898 5117369.66523331, 4984569.60019983 5117367.50823178, 4984573.53747701 5117367.12560696, 4984577.82357263 5117366.69580401, 4984613.99574143 5117363.06033044, 4984610.68299613 5117334.20389177, 4984608.43005283 5117315.15284032, 4984608.00411852 5117312.3589483, 4984607.86857471 5117311.47512308, 4984607.42302237 5117308.60946113, 4984607.12554035 5117306.69951159, 4984606.75467512 5117303.35685116, 4984605.56223654 5117292.63886845, 4984604.80659672 5117285.84809124, 4984604.81061566 5117285.84622136, 4984606.21143452 5117285.52630921, 4984608.9300692 5117284.9035947))","featureDocuments":[]}],"columnsData":[{"configOrder":3986,"columnTitle":"ზონა","columnName":"zona","isHidden":0},{"configOrder":3987,"columnTitle":"ქვე-ზონა","columnName":"kveZona","isHidden":0},{"configOrder":3988,"columnTitle":"კ-1","columnName":"k1","isHidden":0},{"configOrder":3989,"columnTitle":"კ-2","columnName":"k2","isHidden":0},{"configOrder":3990,"columnTitle":"კ-3","columnName":"k3","isHidden":0}]},{"layerName":"შენობა-ნაგებობები","layerIndex":12766,"clientId":1,"layerData":[{"nStorey":5.0,"nomeri1":"75","addrGeo":"ვ. ბარნოვის ქ. 75","geometry":"POLYGON ((4984553.44941478 5117243.41364315, 4984555.41039014 5117243.12299721, 4984555.79325618 5117245.12529194, 4984559.59414728 5117244.73896554, 4984559.87010569 5117246.74098263, 4984569.30582841 5117245.75121463, 4984570.61771065 5117245.62045007, 4984570.62287027 5117243.61902938, 4984568.58718905 5117228.56472201, 4984568.31766628 5117226.7647221, 4984567.89813525 5117226.11211315, 4984560.22792231 5117227.32780209, 4984550.83918701 5117228.26369032, 4984548.30954093 5117228.50571504, 4984532.45581798 5117230.42495428, 4984534.79284035 5117255.50630404, 4984535.21417411 5117255.46025836, 4984553.33654807 5117253.39916939, 4984554.44757694 5117253.27419729, 4984553.44941478 5117243.41364315))"}],"columnsData":[{"configOrder":4373,"columnTitle":"მისამართი","columnName":"addrGeo","isHidden":0},{"configOrder":4374,"columnTitle":"ნომერი","columnName":"nomeri1","isHidden":0},{"configOrder":4376,"columnTitle":"სართული","columnName":"nStorey","isHidden":0}]}],"totalCnt":0}
-DEBUG:root:extracted k value result: {'Layer': 'საცხოვრებელი ზონა 6 (სზ-6)', 'k1': 0.5, 'k2': 2.5, 'k3': 0.3}
-DEBUG:root:Latest info inside loop: {'latest_ganxN': None, 'nebartvislink': None, 'address': None, 'k1': 0.5, 'k2': 2.5, 'k3': 0.3, 'kategoria': None, 'dzegli': False, 'kveZona': 'საცხოვრებელი ზონა-6', 'Layer': 'საცხოვრებელი ზონა 6 (სზ-6)'}
+DEBUG:root:Response from main: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"layerName":"მშენებლობის ნებართვები","layerIndex":1007,"clientId":0,"layerData":[{"დოკკლასი":1.0,"განცხN":"AR1828762","დეტალური":"<a target=\"_blank\" href=\"http://tas.ge/?p=publicpage&documentId=828762\">დეტალური ინფორმაცია</a>","მისამართი":"ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2"},{"დოკკლასი":1.0,"განცხN":"AR1908668","დეტალური":"<a target=\"_blank\" href=\"http://tas.ge/?p=publicpage&documentId=908668\">დეტალური ინფორმაცია</a>","მისამართი":"ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2"}],"columnsData":null},{"layerName":"რეგისტრირებული მიწის ნაკვეთები","layerIndex":16,"clientId":0,"layerData":[{"ქალაქგეგმარებითი დასკვნის მომზადება":"<a href='http://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/printCadcodeIntersections.do?language=ge&orgId=&cadcode=81.01.06.427' target='_blank'><img style='height: 16px;' src='resources/imgs/cadcode-intersections.png' /></a>","საჯარო რეესტრის ინფორმაცია":"<a href='http://abstract.reestri.gov.ge/abstract/cad_amo.php?cad_code=81.01.06.427' target='_blank'><img src='resources/imgs/napr.png' /></a>","საკადასტრო კოდი":"81.01.06.427"}],"columnsData":null},{"layerName":"საცხოვრებელი ზონა 1 (სზ-1)","layerIndex":11874,"clientId":1,"layerData":[{"zona":"საცხოვრებელი ზონა","kveZona":"საცხოვრებელი ზონა-1","featurePhotoes":[],"k1":0.5,"k2":0.8,"k3":0.4,"geometry":"POLYGON ((4978230.75276149 5110360.71491707, 4978250.28709014 5110358.81906426, 4978261.7717482 5110359.62494653, 4978265.97751858 5110359.92007609, 4978279.56907511 5110360.87384976, 4978294.96623576 5110367.25291993, 4978296.42859557 5110363.89890724, 4978296.51153538 5110363.72054194, 4978296.63609753 5110363.48862754, 4978296.7754734 5110363.26535082, 4978296.92899142 5110363.05164906, 4978297.0961133 5110362.84859421, 4978297.27616835 5110362.65685516, 4978297.4683513 5110362.47736873, 4978297.64062567 5110362.33499405, 4978333.60448741 5110334.25522216, 4978326.0652067 5110313.613177, 4978326.02877245 5110313.50917979, 4978325.95350673 5110313.25675396, 4978325.93079876 5110313.16689344, 4978313.19331094 5110259.89110195, 4978313.15721374 5110259.72416204, 4978313.15418656 5110259.70925493, 4978313.15129396 5110259.69407983, 4978306.90915595 5110226.3003378, 4978291.59253188 5110200.66963268, 4978189.53641785 5110258.1953549, 4978189.3348455 5110258.30152813, 4978189.09542847 5110258.40945681, 4978188.84937745 5110258.50152712, 4978188.59803124 5110258.57720656, 4978188.34219337 5110258.63609513, 4978188.08306719 5110258.67819678, 4978187.82185692 5110258.70324699, 4978187.55936567 5110258.71097996, 4978187.29706375 5110258.70153471, 4978187.03602124 5110258.67478053, 4978186.77717321 5110258.63098887, 4978186.52172214 5110258.57043208, 4978186.27073769 5110258.49311365, 4978186.02542188 5110258.39944013, 4978185.78670893 5110258.28995143, 4978185.55553346 5110258.16505319, 4978185.33323122 5110258.02515245, 4978185.12020072 5110257.87105571, 4978184.91791141 5110257.70317044, 4978184.7268951 5110257.52243783, 4978184.5480855 5110257.32953196, 4978184.38228185 5110257.12539493, 4978184.23001675 5110256.91069953, 4978184.0922227 5110256.68652247, 4978183.96916449 5110256.45366986, 4978183.86164043 5110256.21335221, 4978183.77004859 5110255.96651028, 4978183.69451964 5110255.71408398, 4978183.63585146 5110255.45741799, 4978183.59390818 5110255.19718293, 4978183.56895198 5110254.93499016, 4978183.56124767 5110254.6716458, 4978183.57065762 5110254.40835731, 4978183.59731207 5110254.14619876, 4978183.64093968 5110253.88637718, 4978183.70126958 5110253.62996533, 4978183.77843155 5110253.37817156, 4978183.87162031 5110253.13193267, 4978183.98069913 5110252.89218769, 4978184.10526254 5110252.66027742, 4978184.24450567 5110252.43700445, 4978184.39815812 5110252.22330738, 4978184.56528087 5110252.02012262, 4978184.74533564 5110251.82852208, 4978184.93751845 5110251.64903996, 4978185.14089032 5110251.48261269, 4978185.35491471 5110251.32977533, 4978185.57838435 5110251.19173185, 4978185.59338845 5110251.18278877, 4978185.60852495 5110251.17424874, 4978287.46433359 5110193.76136497, 4978246.68947877 5110125.52843696, 4978246.68070163 5110125.51377973, 4978213.63422849 5110139.14631044, 4978079.07757459 5110209.89558336, 4978079.02828712 5110209.92132431, 4978068.85386946 5110215.16336019, 4978103.24353593 5110257.88605177, 4978136.45362031 5110299.18272742, 4978180.26618208 5110349.65409774, 4978173.80958497 5110354.43348073, 4978128.13118509 5110301.76712172, 4978115.78616913 5110286.18254084, 4978112.97961398 5110282.73610997, 4978104.14072265 5110271.88209569, 4978103.99889068 5110271.70782996, 4978103.54190868 5110271.20506126, 4978096.70909449 5110262.55744664, 4978085.33476858 5110248.16220924, 4978081.57173342 5110243.34733903, 4978080.40811097 5110241.85836801, 4978061.99775276 5110220.16085904, 4978060.1530708 5110221.12877146, 4978059.39154929 5110220.03851177, 4977927.13838368 5110288.17614696, 4977880.37388185 5110312.51755384, 4977880.36075628 5110312.52435532, 4977880.347497 5110312.53115636, 4977839.50777367 5110333.55815039, 4977839.39380065 5110333.61548495, 4977838.99462895 5110333.79535241, 4977838.58471362 5110333.9487449, 4977838.16566219 5110334.07472825, 4977837.73921373 5110334.17303977, 4977837.30737516 5110334.24328347, 4977836.87188687 5110334.28479401, 4977836.4346203 5110334.2977118, 4977833.40537078 5110334.28771624, 4977831.33509586 5110337.08749866, 4977802.53686461 5110376.03265183, 4977834.04114404 5110407.40860677, 4977834.0515398 5110407.41884118, 4977834.06153356 5110407.42934267, 4977834.24060717 5110407.62199051, 4977834.40640596 5110407.82613676, 4977834.5586656 5110408.04084105, 4977834.69645365 5110408.26502663, 4977834.80356637 5110408.46548972, 4977843.2765117 5110425.46761678, 4977846.95328908 5110432.84556793, 4977847.54919341 5110434.04134972, 4977847.55716314 5110434.05748144, 4977847.56459761 5110434.07374563, 4977847.6726505 5110434.313939, 4977847.76423495 5110434.56092286, 4977847.8396232 5110434.81322179, 4977847.89841675 5110435.07002919, 4977847.94035216 5110435.33013631, 4977847.96516552 5110435.59246857, 4977847.96512856 5110436.0938848, 4977845.84117772 5110470.19023138, 4977845.84033416 5110470.20284458, 4977845.83922319 5110470.21545689, 4977845.81296006 5110470.47762161, 4977845.76932233 5110470.73744741, 4977845.70884836 5110470.99386237, 4977845.6318095 5110471.24565946, 4977845.53860996 5110471.49190054, 4977845.42952024 5110471.73164701, 4977845.30494584 5110471.96355807, 4977845.16569167 5110472.1868311, 4977845.01202819 5110472.40052751, 4977844.84476075 5110472.60371047, 4977844.77014832 5110472.6861393, 4977815.04199956 5110504.65818132, 4977814.93654567 5110504.76735097, 4977814.74448463 5110504.94683072, 4977814.54110057 5110505.11338863, 4977814.43105879 5110505.19449259, 4977751.34307121 5110550.1336023, 4977776.60650374 5110585.05895026, 4977776.70325317 5110585.1987186, 4977776.80048814 5110585.35352053, 4977789.64329545 5110606.84462229, 4977795.26565532 5110603.68714963, 4977795.46081375 5110603.54244021, 4977845.11353872 5110566.73291076, 4977935.17941095 5110509.62526335, 4977935.26610057 5110509.57038691, 4978011.32022057 5110445.30274061, 4978012.91870114 5110443.95203955, 4978033.33192833 5110426.70563693, 4978080.28528581 5110397.4603932, 4978125.8827335 5110379.03940717, 4978127.03748168 5110378.57290588, 4978142.84942091 5110372.18499398, 4978163.75258214 5110369.45751849, 4978172.73180968 5110368.28591259, 4978230.75276149 5110360.71491707))","featureDocuments":[]}],"columnsData":[{"configOrder":3991,"columnTitle":"ზონა","columnName":"zona","isHidden":0},{"configOrder":3992,"columnTitle":"ქვე-ზონა","columnName":"kveZona","isHidden":0},{"configOrder":3993,"columnTitle":"კ-1","columnName":"k1","isHidden":0},{"configOrder":3994,"columnTitle":"კ-2","columnName":"k2","isHidden":0},{"configOrder":3995,"columnTitle":"კ-3","columnName":"k3","isHidden":0}]}],"totalCnt":0}
+DEBUG:root:Sending request with json_data_lrs: {'action': 'managelayersws/getLayersInfos', 'lrsIds': '1007,323,16,11905,11887,11873,11886,11866,11865,11888,11867,11881,11884,11874,11891,11875,11868,11885,11870,11871,11877,11878,11882,11880,11889,11869,11872,11876,11883,11879,11890,13047,11822,11821,95,117,12295,11805,122,11811,11848,11810,11812,119,120,92,114,11813,13045,13305,11808,12585,11824,10520,11706,12766,10322,12911,12910,13330', 'x': 44.718801553649115, 'y': 41.6603985679574, 'orgId': 1}
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.tbilisi.gov.ge:443
+DEBUG:urllib3.connectionpool:https://maps.tbilisi.gov.ge:443 "POST /TbilisimapCoreProxyController/process.do HTTP/1.1" 200 None
+DEBUG:root:Response from main: {"success":true,"sessionValid":true,"errorText":null,"errorCode":null,"data":[{"layerName":"მშენებლობის ნებართვები","layerIndex":1007,"clientId":0,"layerData":[{"დოკკლასი":1.0,"განცხN":"AR1828762","დეტალური":"<a target=\"_blank\" href=\"http://tas.ge/?p=publicpage&documentId=828762\">დეტალური ინფორმაცია</a>","მისამართი":"ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2"},{"დოკკლასი":1.0,"განცხN":"AR1908668","დეტალური":"<a target=\"_blank\" href=\"http://tas.ge/?p=publicpage&documentId=908668\">დეტალური ინფორმაცია</a>","მისამართი":"ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2"}],"columnsData":null},{"layerName":"რეგისტრირებული მიწის ნაკვეთები","layerIndex":16,"clientId":0,"layerData":[{"ქალაქგეგმარებითი დასკვნის მომზადება":"<a href='http://maps.tbilisi.gov.ge/TbilisimapCoreProxyController/printCadcodeIntersections.do?language=ge&orgId=&cadcode=81.01.06.427' target='_blank'><img style='height: 16px;' src='resources/imgs/cadcode-intersections.png' /></a>","საჯარო რეესტრის ინფორმაცია":"<a href='http://abstract.reestri.gov.ge/abstract/cad_amo.php?cad_code=81.01.06.427' target='_blank'><img src='resources/imgs/napr.png' /></a>","საკადასტრო კოდი":"81.01.06.427"}],"columnsData":null},{"layerName":"საცხოვრებელი ზონა 1 (სზ-1)","layerIndex":11874,"clientId":1,"layerData":[{"zona":"საცხოვრებელი ზონა","kveZona":"საცხოვრებელი ზონა-1","featurePhotoes":[],"k1":0.5,"k2":0.8,"k3":0.4,"geometry":"POLYGON ((4978230.75276149 5110360.71491707, 4978250.28709014 5110358.81906426, 4978261.7717482 5110359.62494653, 4978265.97751858 5110359.92007609, 4978279.56907511 5110360.87384976, 4978294.96623576 5110367.25291993, 4978296.42859557 5110363.89890724, 4978296.51153538 5110363.72054194, 4978296.63609753 5110363.48862754, 4978296.7754734 5110363.26535082, 4978296.92899142 5110363.05164906, 4978297.0961133 5110362.84859421, 4978297.27616835 5110362.65685516, 4978297.4683513 5110362.47736873, 4978297.64062567 5110362.33499405, 4978333.60448741 5110334.25522216, 4978326.0652067 5110313.613177, 4978326.02877245 5110313.50917979, 4978325.95350673 5110313.25675396, 4978325.93079876 5110313.16689344, 4978313.19331094 5110259.89110195, 4978313.15721374 5110259.72416204, 4978313.15418656 5110259.70925493, 4978313.15129396 5110259.69407983, 4978306.90915595 5110226.3003378, 4978291.59253188 5110200.66963268, 4978189.53641785 5110258.1953549, 4978189.3348455 5110258.30152813, 4978189.09542847 5110258.40945681, 4978188.84937745 5110258.50152712, 4978188.59803124 5110258.57720656, 4978188.34219337 5110258.63609513, 4978188.08306719 5110258.67819678, 4978187.82185692 5110258.70324699, 4978187.55936567 5110258.71097996, 4978187.29706375 5110258.70153471, 4978187.03602124 5110258.67478053, 4978186.77717321 5110258.63098887, 4978186.52172214 5110258.57043208, 4978186.27073769 5110258.49311365, 4978186.02542188 5110258.39944013, 4978185.78670893 5110258.28995143, 4978185.55553346 5110258.16505319, 4978185.33323122 5110258.02515245, 4978185.12020072 5110257.87105571, 4978184.91791141 5110257.70317044, 4978184.7268951 5110257.52243783, 4978184.5480855 5110257.32953196, 4978184.38228185 5110257.12539493, 4978184.23001675 5110256.91069953, 4978184.0922227 5110256.68652247, 4978183.96916449 5110256.45366986, 4978183.86164043 5110256.21335221, 4978183.77004859 5110255.96651028, 4978183.69451964 5110255.71408398, 4978183.63585146 5110255.45741799, 4978183.59390818 5110255.19718293, 4978183.56895198 5110254.93499016, 4978183.56124767 5110254.6716458, 4978183.57065762 5110254.40835731, 4978183.59731207 5110254.14619876, 4978183.64093968 5110253.88637718, 4978183.70126958 5110253.62996533, 4978183.77843155 5110253.37817156, 4978183.87162031 5110253.13193267, 4978183.98069913 5110252.89218769, 4978184.10526254 5110252.66027742, 4978184.24450567 5110252.43700445, 4978184.39815812 5110252.22330738, 4978184.56528087 5110252.02012262, 4978184.74533564 5110251.82852208, 4978184.93751845 5110251.64903996, 4978185.14089032 5110251.48261269, 4978185.35491471 5110251.32977533, 4978185.57838435 5110251.19173185, 4978185.59338845 5110251.18278877, 4978185.60852495 5110251.17424874, 4978287.46433359 5110193.76136497, 4978246.68947877 5110125.52843696, 4978246.68070163 5110125.51377973, 4978213.63422849 5110139.14631044, 4978079.07757459 5110209.89558336, 4978079.02828712 5110209.92132431, 4978068.85386946 5110215.16336019, 4978103.24353593 5110257.88605177, 4978136.45362031 5110299.18272742, 4978180.26618208 5110349.65409774, 4978173.80958497 5110354.43348073, 4978128.13118509 5110301.76712172, 4978115.78616913 5110286.18254084, 4978112.97961398 5110282.73610997, 4978104.14072265 5110271.88209569, 4978103.99889068 5110271.70782996, 4978103.54190868 5110271.20506126, 4978096.70909449 5110262.55744664, 4978085.33476858 5110248.16220924, 4978081.57173342 5110243.34733903, 4978080.40811097 5110241.85836801, 4978061.99775276 5110220.16085904, 4978060.1530708 5110221.12877146, 4978059.39154929 5110220.03851177, 4977927.13838368 5110288.17614696, 4977880.37388185 5110312.51755384, 4977880.36075628 5110312.52435532, 4977880.347497 5110312.53115636, 4977839.50777367 5110333.55815039, 4977839.39380065 5110333.61548495, 4977838.99462895 5110333.79535241, 4977838.58471362 5110333.9487449, 4977838.16566219 5110334.07472825, 4977837.73921373 5110334.17303977, 4977837.30737516 5110334.24328347, 4977836.87188687 5110334.28479401, 4977836.4346203 5110334.2977118, 4977833.40537078 5110334.28771624, 4977831.33509586 5110337.08749866, 4977802.53686461 5110376.03265183, 4977834.04114404 5110407.40860677, 4977834.0515398 5110407.41884118, 4977834.06153356 5110407.42934267, 4977834.24060717 5110407.62199051, 4977834.40640596 5110407.82613676, 4977834.5586656 5110408.04084105, 4977834.69645365 5110408.26502663, 4977834.80356637 5110408.46548972, 4977843.2765117 5110425.46761678, 4977846.95328908 5110432.84556793, 4977847.54919341 5110434.04134972, 4977847.55716314 5110434.05748144, 4977847.56459761 5110434.07374563, 4977847.6726505 5110434.313939, 4977847.76423495 5110434.56092286, 4977847.8396232 5110434.81322179, 4977847.89841675 5110435.07002919, 4977847.94035216 5110435.33013631, 4977847.96516552 5110435.59246857, 4977847.96512856 5110436.0938848, 4977845.84117772 5110470.19023138, 4977845.84033416 5110470.20284458, 4977845.83922319 5110470.21545689, 4977845.81296006 5110470.47762161, 4977845.76932233 5110470.73744741, 4977845.70884836 5110470.99386237, 4977845.6318095 5110471.24565946, 4977845.53860996 5110471.49190054, 4977845.42952024 5110471.73164701, 4977845.30494584 5110471.96355807, 4977845.16569167 5110472.1868311, 4977845.01202819 5110472.40052751, 4977844.84476075 5110472.60371047, 4977844.77014832 5110472.6861393, 4977815.04199956 5110504.65818132, 4977814.93654567 5110504.76735097, 4977814.74448463 5110504.94683072, 4977814.54110057 5110505.11338863, 4977814.43105879 5110505.19449259, 4977751.34307121 5110550.1336023, 4977776.60650374 5110585.05895026, 4977776.70325317 5110585.1987186, 4977776.80048814 5110585.35352053, 4977789.64329545 5110606.84462229, 4977795.26565532 5110603.68714963, 4977795.46081375 5110603.54244021, 4977845.11353872 5110566.73291076, 4977935.17941095 5110509.62526335, 4977935.26610057 5110509.57038691, 4978011.32022057 5110445.30274061, 4978012.91870114 5110443.95203955, 4978033.33192833 5110426.70563693, 4978080.28528581 5110397.4603932, 4978125.8827335 5110379.03940717, 4978127.03748168 5110378.57290588, 4978142.84942091 5110372.18499398, 4978163.75258214 5110369.45751849, 4978172.73180968 5110368.28591259, 4978230.75276149 5110360.71491707))","featureDocuments":[]}],"columnsData":[{"configOrder":3991,"columnTitle":"ზონა","columnName":"zona","isHidden":0},{"configOrder":3992,"columnTitle":"ქვე-ზონა","columnName":"kveZona","isHidden":0},{"configOrder":3993,"columnTitle":"კ-1","columnName":"k1","isHidden":0},{"configOrder":3994,"columnTitle":"კ-2","columnName":"k2","isHidden":0},{"configOrder":3995,"columnTitle":"კ-3","columnName":"k3","isHidden":0}]},{"layerName":"შენობა-ნაგებობები","layerIndex":12766,"clientId":1,"layerData":[{"nStorey":0.0,"nomeri1":null,"addrGeo":null,"geometry":"POLYGON ((4978080.01503672 5110245.67802371, 4978059.79473073 5110222.07685867, 4978051.8580053 5110227.64536316, 4978072.70980996 5110251.98382643, 4978080.01503672 5110245.67802371))"}],"columnsData":[{"configOrder":4373,"columnTitle":"მისამართი","columnName":"addrGeo","isHidden":0},{"configOrder":4374,"columnTitle":"ნომერი","columnName":"nomeri1","isHidden":0},{"configOrder":4376,"columnTitle":"სართული","columnName":"nStorey","isHidden":0}]}],"totalCnt":0}
+DEBUG:root:extracted k value result: {'Layer': 'საცხოვრებელი ზონა 1 (სზ-1)', 'k1': 0.5, 'k2': 0.8, 'k3': 0.4}
+DEBUG:root:Latest info inside loop: {'latest_ganxN': 'AR1908668', 'nebartvislink': 'http://tas.ge/?p=publicpage&documentId=908668', 'address': None, 'k1': 0.5, 'k2': 0.8, 'k3': 0.4, 'kategoria': None, 'dzegli': False, 'kveZona': 'საცხოვრებელი ზონა-1', 'Layer': 'საცხოვრებელი ზონა 1 (სზ-1)'}
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): abstract.reestri.gov.ge:80
-DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=01.14.11.012.001 HTTP/1.1" 200 2012
+DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=81.01.06.427 HTTP/1.1" 200 2447
 DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -611,12 +104,12 @@ DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
     </head>
 
     <body style="margin:0; border:none; background-image:url(bg.gif)">
-        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixguoby2fx9GOKRzz9ZF5n[r');" id="24942025" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxivZ16HAHe]gvMa5FO2WZbG');" id="25126578" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGuavWSqqkBeXGvBfY240[K');" id="22149534" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFrAVGEodzamQEp8tyOe2Vm6');" id="22147692" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYwfDTZQZ]xy9nBY]noGBUxH');" id="19898746" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNCjWsuzEvELLfh8qKpLI0Nw');" id="19898804" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclCKX2CG641vevjjcD5qoypv');" id="19696156" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4GJC[RV3zKD27VYb4DIPbn');" id="19826005" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKq0Lql7wWEaihnPidhsUQHx');" id="20349257" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkOdO8BNRdJrvgjvzmoyLAY');" id="22036343" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGC1OKmIDn[JKbjKvOld8TZ1');" id="22036316" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr00lAGJ3tVHuQ7P3PUerJmnz');" id="22036340" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klE7s]FubgdhVSLVTrYFHcJy');" id="22036280" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz15OZB]HzPRhcZlx4KVibHVI');" id="18460655" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBqJB7Xq2RoXg74ZkksGyyw');" id="18460726" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNI4ekutr9wdlLhiwkbKCZpS');" id="452257" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012007173659</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;25/10/2007</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;616336</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvHWAEbcH8bbeuZIGhO8G4o7');" id="90105" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012006080229</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;24/11/2006</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;293046</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr></table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN7SDu]ooSppi9Vdlq6LRTSk5qPbJFy36JBEvVJtzaka');" id="27607976" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;892023283907</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;21/11/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;24581923</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAjQjaAgx13cncovL5t9HFdwdIJKjWWXonofpLLjAqRH');" id="27607331" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;892023283907</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;21/11/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;24581923</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFOG9qy7]Ipmk5E2L8HSA6gyIPJX4JUdv4WCgWLWA6U6d');" id="24123789" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023084154</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;01/02/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22260329</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEY68JltygMOcOUA[PCe4tJfHECA3MThu[]lzpAuT6U]');" id="24123959" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023084154</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;01/02/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22260329</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKAUOCRaAhxzaukwsjymX9Rjmb6HysNY9pqhHSE5RRH2');" id="19775695" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021389299</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/05/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19435734</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFHB5BSZVEFQucvWAy4yUAc[2zpyupRZ1Nx6rHrgqgujO');" id="19775666" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021389299</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/05/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19435734</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEYImuBPdTovJGpzJcSjZClZEfxNqiYqTYWHgofES7v5');" id="17235805" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020317104</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;17/06/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18281606</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGzXRIXRQssZfwF792KETpfoLsI05ZZJO8uq5nfupxIv');" id="17235807" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020317104</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;17/06/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18281606</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGQOwZps7yuRmYjv1U7mdrh3RLUL[cIC70JHVpDJ]j9P');" id="16992149" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020222586</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18182637</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKa2OU71XDiRsxDYwGDPYM[[WdbBnJhUwTIzE61rEBv2');" id="16992139" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020222586</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18182637</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIcOUGXGIj]CibKtTG6w[HdKfVqpWvhxsWqQ9KlFwL[w');" id="16893895" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020197638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;11/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18156723</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNmr4roAFvb6yYoChzSysVx]mGbeoJbPYddwkGFO2G6W');" id="16894264" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020197638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;11/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18156723</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDMU[mUqcUlCIqZOA7xgWcHXoymjicrZL9ZPZCPb1pdA');" id="13878297" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPa[bgG4K0nTAiFu6i154dLI0S1f1kLxpPUb7XUTmaqs');" id="13878076" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMkhROGouR9GSNUWnJ]r8Bvha8c1k2LR4iYVP]4Pi5Hm');" id="13878289" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKwB3Dwtr9bLuQsQKpT8TZgu4rx9uI3BCM8iPgP0YUKd');" id="13833095" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFD8zF6JxHREvNBLZOalolH70DewNzy8g0s7OzqJvHDd1');" id="13878148" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFA6IcYBc1881IbHyQqFNFUgpqoBQaM1jJLZzPGR4rbIC');" id="7611667" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882016206729</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/04/2016</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;11909506</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAdyElKAVIl2ianQpskCq0cWixNQuRcgQD0LWOXcZizv');" id="7616041" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882016206664</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/04/2016</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;11909542</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN4JBrRWigwK5sWCVWqoTa920l8pc2P3WYBeaa]yIlz[');" id="6456042" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882014711436</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;30/12/2014</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;10540352</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPuak7]YxYQzlvAeHlDsVkhjeoUOwDZh59[J1PRL3PnO');" id="6417190" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882014678294</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;16/12/2014</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;10500072</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO7ZRufWZXABYI[I]r3YqZy9Qf1[Fp7Z6oKpcHaXknPH');" id="1421747" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861823</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAegI4Irl0RUVodM6nKbLnOB2nUMlM0XrFfuIhbyW6SW');" id="1421717" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304597</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861754</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPajEW6f3QOGCQEedrOXv9ZPP2CGq]MVBGXPNFJooqJS');" id="1421733" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304597</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861754</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr></table>
 
     </body>
 </html>
 DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): abstract.reestri.gov.ge:80
-DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=01.14.11.012.001 HTTP/1.1" 200 2012
+DEBUG:urllib3.connectionpool:http://abstract.reestri.gov.ge:80 "GET /abstract/cad_amo.php?cad_code=81.01.06.427 HTTP/1.1" 200 2446
 DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -691,21 +184,21 @@ DEBUG:root:Response from response2: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
     </head>
 
     <body style="margin:0; border:none; background-image:url(bg.gif)">
-        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixguoby2fx9GOKRzz9ZF5n[r');" id="24942025" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxivZ16HAHe]gvMa5FO2WZbG');" id="25126578" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023356060</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;10/04/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22748340</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGuavWSqqkBeXGvBfY240[K');" id="22149534" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFrAVGEodzamQEp8tyOe2Vm6');" id="22147692" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882022256438</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;14/04/2022</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;20617160</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYwfDTZQZ]xy9nBY]noGBUxH');" id="19898746" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNCjWsuzEvELLfh8qKpLI0Nw');" id="19898804" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021446270</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/06/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19498672</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclCKX2CG641vevjjcD5qoypv');" id="19696156" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4GJC[RV3zKD27VYb4DIPbn');" id="19826005" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKq0Lql7wWEaihnPidhsUQHx');" id="20349257" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkOdO8BNRdJrvgjvzmoyLAY');" id="22036343" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGC1OKmIDn[JKbjKvOld8TZ1');" id="22036316" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr00lAGJ3tVHuQ7P3PUerJmnz');" id="22036340" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klE7s]FubgdhVSLVTrYFHcJy');" id="22036280" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021344375</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/04/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19387269</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz15OZB]HzPRhcZlx4KVibHVI');" id="18460655" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBqJB7Xq2RoXg74ZkksGyyw');" id="18460726" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020889362</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/11/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18887450</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNI4ekutr9wdlLhiwkbKCZpS');" id="452257" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012007173659</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;25/10/2007</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;616336</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvHWAEbcH8bbeuZIGhO8G4o7');" id="90105" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;012006080229</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;24/11/2006</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;293046</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr></table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="1"><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAjQjaAgx13cncovL5t9HFdwdIJKjWWXonofpLLjAqRH');" id="27607331" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;892023283907</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;21/11/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;24581923</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN7SDu]ooSppi9Vdlq6LRTSk5qPbJFy36JBEvVJtzaka');" id="27607976" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;892023283907</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;21/11/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;24581923</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEY68JltygMOcOUA[PCe4tJfHECA3MThu[]lzpAuT6U]');" id="24123959" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023084154</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;01/02/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22260329</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFOG9qy7]Ipmk5E2L8HSA6gyIPJX4JUdv4WCgWLWA6U6d');" id="24123789" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882023084154</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;01/02/2023</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;22260329</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFHB5BSZVEFQucvWAy4yUAc[2zpyupRZ1Nx6rHrgqgujO');" id="19775666" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021389299</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/05/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19435734</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKAUOCRaAhxzaukwsjymX9Rjmb6HysNY9pqhHSE5RRH2');" id="19775695" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882021389299</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;20/05/2021</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;19435734</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEYImuBPdTovJGpzJcSjZClZEfxNqiYqTYWHgofES7v5');" id="17235805" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020317104</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;17/06/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18281606</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGzXRIXRQssZfwF792KETpfoLsI05ZZJO8uq5nfupxIv');" id="17235807" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020317104</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;17/06/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18281606</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKa2OU71XDiRsxDYwGDPYM[[WdbBnJhUwTIzE61rEBv2');" id="16992139" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020222586</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18182637</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGQOwZps7yuRmYjv1U7mdrh3RLUL[cIC70JHVpDJ]j9P');" id="16992149" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020222586</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;29/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18182637</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNmr4roAFvb6yYoChzSysVx]mGbeoJbPYddwkGFO2G6W');" id="16894264" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020197638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;11/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18156723</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIcOUGXGIj]CibKtTG6w[HdKfVqpWvhxsWqQ9KlFwL[w');" id="16893895" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882020197638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;11/03/2020</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;18156723</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDMU[mUqcUlCIqZOA7xgWcHXoymjicrZL9ZPZCPb1pdA');" id="13878297" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKwB3Dwtr9bLuQsQKpT8TZgu4rx9uI3BCM8iPgP0YUKd');" id="13833095" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPa[bgG4K0nTAiFu6i154dLI0S1f1kLxpPUb7XUTmaqs');" id="13878076" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFD8zF6JxHREvNBLZOalolH70DewNzy8g0s7OzqJvHDd1');" id="13878148" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMkhROGouR9GSNUWnJ]r8Bvha8c1k2LR4iYVP]4Pi5Hm');" id="13878289" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882019099363</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;12/02/2019</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;16933666</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFA6IcYBc1881IbHyQqFNFUgpqoBQaM1jJLZzPGR4rbIC');" id="7611667" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882016206729</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/04/2016</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;11909506</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAdyElKAVIl2ianQpskCq0cWixNQuRcgQD0LWOXcZizv');" id="7616041" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882016206664</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;04/04/2016</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;11909542</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN4JBrRWigwK5sWCVWqoTa920l8pc2P3WYBeaa]yIlz[');" id="6456042" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882014711436</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;30/12/2014</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;10540352</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPuak7]YxYQzlvAeHlDsVkhjeoUOwDZh59[J1PRL3PnO');" id="6417190" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882014678294</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;16/12/2014</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;10500072</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO7ZRufWZXABYI[I]r3YqZy9Qf1[Fp7Z6oKpcHaXknPH');" id="1421747" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304638</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861823</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPajEW6f3QOGCQEedrOXv9ZPP2CGq]MVBGXPNFJooqJS');" id="1421733" height="25" class="style1"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304597</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861754</td><td>&nbsp;á¡áááááá¡á¢á á á á£áá&nbsp;</td></tr><tr onmousemove="move1(this.id)" onmouseout="move2(this.id)" onclick="openWindow('https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAegI4Irl0RUVodM6nKbLnOB2nUMlM0XrFfuIhbyW6SW');" id="1421717" height="25" class="style0"><td>&nbsp;á áááá¡á¢á ááªááá¡ ááááá á:&nbsp;882009304597</td><td>&nbsp;á áááá¡á¢á ááªááá¡ ááá áá¦á:&nbsp;28/09/2009</td><td>&nbsp;áááááªá®áááá¡ ááááá á:&nbsp;1861754</td><td>&nbsp;áááááá¬áá á&nbsp;</td></tr></table>
 
     </body>
 </html>
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "POST /map/portal/search HTTP/1.1" 200 764
-DEBUG:root:Response from map/portal/search: {'status': True, 'result': [{'id': 46800, 'name': '01.14.11.012.001', 'descript': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resulttext': 'ქალაქი თბილისი , ქუჩა ნაფარეული , N 18', 'resultlink': '/map/portal/getbylbl?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'details': {'type': 'address', 'mode': 'absolute', 'info_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA', 'geometry_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&res=shp'}, 'geo_coords': '', 'layers': [], 'sdo_gtype': '2003', 'dist': '0', 'rank': '0', 'sdo_srid': '4326', 'shape_wkt': '', 'env': 'alpha'}]}
+DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "POST /map/portal/search HTTP/1.1" 200 850
+DEBUG:root:Response from map/portal/search: {'status': True, 'result': [{'id': 1345423, 'name': '81.01.06.427', 'descript': 'ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2', 'resulttext': 'ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2', 'resultlink': '/map/portal/getbylbl?lbl=lr_parcels:AAArWyAAPAAIceEAAA', 'details': {'type': 'address', 'mode': 'absolute', 'info_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAAPAAIceEAAA', 'geometry_link': '/lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAAPAAIceEAAA&res=shp'}, 'geo_coords': '', 'layers': [], 'sdo_gtype': '2003', 'dist': '0', 'rank': '0', 'sdo_srid': '4326', 'shape_wkt': '', 'env': 'alpha'}]}
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): maps.gov.ge:443
-DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "GET /lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAA9AAAkdjAAA&lang=ka HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:https://maps.gov.ge:443 "GET /lr/bo/mg/getinfo.alpha?lbl=lr_parcels:AAArWyAAPAAIceEAAA&lang=ka HTTP/1.1" 200 None
 DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CADLIST.GETINFO.MAPGOV.ALPHA -->
-<label class="expandable mb-2 info_sidebar_container" data-infotype="immovable" data-index="46800">
+<label class="expandable mb-2 info_sidebar_container" data-infotype="immovable" data-index="1345423">
   <input type="checkbox" class="expand_checkbox_el">
 <!-- Expandable tab control -->
 <div>
-    <span class="pl-2 font-sans flex-1 line-clamp-1 title_el">01.14.11.012.001
+    <span class="pl-2 font-sans flex-1 line-clamp-1 title_el">81.01.06.427
       <span class="font-light pl-2"> -რეგისტრირებულია</span>
     </span>
     <!-- Color Picker -->
@@ -754,13 +247,13 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
     <div class="px-4 p-2 flex flex-col rounded-lg bg-blue-100">
       <div class="text-sm text-gray-600">საკადასტრო კოდი</div>
       <div class="text-lg text-gray-800 font-sans">
-        01.14.11.012.001
+        81.01.06.427
       </div>
     </div>
     <div class="px-4 p-2 flex flex-col rounded-lg bg-blue-100">
       <div class="text-sm text-gray-600">ფართობი</div>
       <div class="text-lg text-gray-800 font-sans">
-        381<span class="pl-2 text-sm">
+        350<span class="pl-2 text-sm">
             კვ.მ.
           </span>
       </div>
@@ -777,20 +270,20 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
     <div class="p-2">
       <div class="text-sm text-gray-600">მისამართი</div>
       <div class="text-md text-gray-800">
-        ქალაქი თბილისი , ქუჩა ნაფარეული , N 18
+        ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2
       </div>
     </div>
     <div class="p-2">
       <div class="text-sm text-gray-600">საკუთრების ტიპი</div>
       <div class="text-md text-gray-800">
-        თანასაკუთრება
+        საკუთრება
       </div>
     </div>
   </div>
          <div class="font-bold font-mtavruli mt-4 px-2 text-gray-800">მესაკუთრე(ებ)ი</div>
          <!--begin of MI.OWNERS.ACT.MAPGOV.ALPHA -->
 <div class="divide-y text-gray-800">
-<p class="p-2">ბ.მ. ამხანაგობა  "ნაფარეული"</p>
+<p class="p-2">	გიორგი  მგალობლიშვილი</p>
 
 
 </div>
@@ -807,16 +300,16 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
               <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">საკადასტრო გეგმა&nbsp;(4)</span>
+            </svg><span class="flex-1 line-clamp-1">ამონაწერი საჯარო რეესტრიდან&nbsp;(20)</span>
             <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"></path>
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
           <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBeV5HZQMUtZjncQ6bYxpxiRbgEqo4EXb2[brXnOXiEp" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023356060
-                <span class="font-light">11.04.2023</span>
+              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAjQjaAgx13cncovL5t9HFedTQ7ogI0sh6YuyOfpTKpZ" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">892023283907
+                <span class="font-light">21.11.2023</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -824,9 +317,9 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
                   <polyline points="15 4 20 4 20 9"></polyline>
                 </svg>
           </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMTQRQc4ZZ1CkcAWlENrixhB0Z1KS]4cJjX92ja5OL1d" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023356060
-                <span class="font-light">11.04.2023</span>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN7SDu]ooSppi9Vdlq6LRTQtRJ]aPtuyCRigb3pdYmnz" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">892023283907
+                <span class="font-light">21.11.2023</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -834,9 +327,9 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
                   <polyline points="15 4 20 4 20 9"></polyline>
                 </svg>
           </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK2OW8a2kCKayYNkqdv1klFlcxHQN7KNRLyJnQ1AZF9I" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFOG9qy7]Ipmk5E2L8HSA6gzsrQxlD]xLntxzxfoVcoMK" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023084154
+                <span class="font-light">01.02.2023</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -844,9 +337,169 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
                   <polyline points="15 4 20 4 20 9"></polyline>
                 </svg>
           </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAToGDOsnAxH5jEOg6WxHJkjVK0KLXUWYaEe7P9HB[sq" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEY68JltygMOcOUA[PCe4tLUb6EFZeeOcg]E4k4WpdA7" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882023084154
+                <span class="font-light">01.02.2023</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFHB5BSZVEFQucvWAy4yUAc]g5SBa]lm3d8bkpJEhquzb" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021389299
+                <span class="font-light">20.05.2021</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKAUOCRaAhxzaukwsjymX9RGYq6pzFIoM4kFJPDzGoH4" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021389299
+                <span class="font-light">20.05.2021</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGzXRIXRQssZfwF792KETpdsStq7ZqmNGj44PxsxiEbd" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020317104
+                <span class="font-light">17.06.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFEYImuBPdTovJGpzJcSjZClahP2f]pW6U9G28mQOjw]i" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020317104
+                <span class="font-light">17.06.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKa2OU71XDiRsxDYwGDPYM[JD[xesNHFNSRzHflHd9Rs" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020222586
+                <span class="font-light">01.04.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFGQOwZps7yuRmYjv1U7mdrg1sZ[kC]zTamhKbloW5NL]" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020222586
+                <span class="font-light">01.04.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNmr4roAFvb6yYoChzSysVyClbIBMq7ENiJGRblvNJ8z" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020197638
+                <span class="font-light">11.03.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIcOUGXGIj]CibKtTG6w[HdqjKaLBsdVOtdwLI5dpXm4" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020197638
+                <span class="font-light">11.03.2020</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFD8zF6JxHREvNBLZOalolH7XtD1aGgPDc2ToqCxQ4rvV" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882019099363
+                <span class="font-light">25.02.2019</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFMkhROGouR9GSNUWnJ]r8Bs9C01KTgU56uxiANKAFj5J" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882019099363
+                <span class="font-light">25.02.2019</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAdyElKAVIl2ianQpskCq0daHUehZitWabE9fPdn]4u4" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882016206664
+                <span class="font-light">05.04.2016</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFA6IcYBc1881IbHyQqFNFUjgPsWAEjiXIRgOFE8hvcZ]" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882016206729
+                <span class="font-light">04.04.2016</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFN4JBrRWigwK5sWCVWqoTa]emQQdczeI9x5YeYIRsa1f" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882014711436
+                <span class="font-light">30.12.2014</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPuak7]YxYQzlvAeHlDsVkhq6d3X4uwRo1ijBgTugp78" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882014678294
+                <span class="font-light">16.12.2014</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO7ZRufWZXABYI[I]r3YqZwjYdXdCXK9xjMTynoDR9TG" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882009304638
+                <span class="font-light">07.10.2009</span>
+                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                  <line x1="10" y1="14" x2="20" y2="4"></line>
+                  <polyline points="15 4 20 4 20 9"></polyline>
+                </svg>
+          </div>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAegI4Irl0RUVodM6nKbLnNI]MQTCKL[fIA3QZhHefnP" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882009304597
+                <span class="font-light">07.10.2009</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -865,16 +518,16 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
               <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">ამონაწერი საჯარო რეესტრიდან&nbsp;(10)</span>
+            </svg><span class="flex-1 line-clamp-1">საკადასტრო გეგმა&nbsp;(3)</span>
             <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"></path>
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
           <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFK1QIUT9Y9RvuMUF3aIXxRGL[uGIWU[5gvVgFWlhfgd5" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882022256438
-                <span class="font-light">15.04.2022</span>
+              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPa[bgG4K0nTAiFu6i154dJtIX8N53XWO]gPcMplHiAv" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882019099363
+                <span class="font-light">25.02.2019</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -882,9 +535,9 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
                   <polyline points="15 4 20 4 20 9"></polyline>
                 </svg>
           </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDd8TsAX9ePNeB9t5tW1kFoo0WwTZwUjnWnVMNUBm08A" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882022256438
-                <span class="font-light">15.04.2022</span>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFDMU[mUqcUlCIqZOA7xgWcFikyHt9r4LosNqnj9o7Wpk" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882019099363
+                <span class="font-light">25.02.2019</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -892,79 +545,9 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
                   <polyline points="15 4 20 4 20 9"></polyline>
                 </svg>
           </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJt0AVLVGExUJqkCUJuNr01dulcy6FRu3EusE1IBOu[Z" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFAHDzXEwLJUtqPTUBjkoyGCuQyKoIbYKZCOQzp4s1gwv" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">30.03.2022</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFLZ1zdyfyQgJImk8Ql[IzNDnd8ns26e[sfRI[SZatdQI" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021446270
-                <span class="font-light">07.06.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFH0KzbefHCh[eJUivKT4XYyD]g[jKFxh4w8iMGZ43RSj" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021446270
-                <span class="font-light">07.06.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKXQIUB5sx[X9ENp1eosz14xCpkt[ESbmjkhbjR0jpKW" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020889362
-                <span class="font-light">25.11.2020</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFO2IgpwY6OKS9slbvFfJ0xBN9ngocwq7T0UhgxfPygNy" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882020889362
-                <span class="font-light">25.11.2020</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFNyk7PQatO[AaeHz9clFCNLWrUYIjA59hEo7b8tIDL]N" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">012007173659
-                <span class="font-light">26.10.2007</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFJvtp6gcCQRDIdLZEaCHHvEwuNC8AKcAOWhLJg4PoziB" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">012006080229
-                <span class="font-light">25.11.2006</span>
+</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFPajEW6f3QOGCQEedrOXv9bCWpeIOLhnGUij7x6RwjiL" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882009304597
+                <span class="font-light">07.10.2009</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -983,36 +566,16 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
               <polyline points="10 9 9 9 8 9"></polyline>
-            </svg><span class="flex-1 line-clamp-1">სიტუაციური ნახაზი&nbsp;(3)</span>
+            </svg><span class="flex-1 line-clamp-1">სიტუაციური ნახაზი&nbsp;(1)</span>
             <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z"></path>
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
           <div class="divide-y">
-              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFBKMTVvwnrli3WOHO[vaxKpahQ32cRTPfsl3i06DrJfj" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">03.08.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIWIvRDGmsGxflxj5Q85cP4aOqLDlYWsCrnd6SfM8XN0" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">28.05.2021</span>
-                <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z"></path>
-                  <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-                  <line x1="10" y1="14" x2="20" y2="4"></line>
-                  <polyline points="15 4 20 4 20 9"></polyline>
-                </svg>
-          </div>
-</a><a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFIXMDfjzPPM6LAT6uuypclC2NAazShkkkgRqkRat2KHe" target="_blank">
-        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882021344375
-                <span class="font-light">07.05.2021</span>
+              <a href="https://bs.napr.gov.ge/GetBlob?pid=101&bid=boVlyOwlsX3qmYsntmLmFKwB3Dwtr9bLuQsQKpT8TZhQrSSGaZEqFVvQQOoa57qC" target="_blank">
+        <div class="flex items-center justify-between p-2 text-gray-800 font-sans">882019099363
+                <span class="font-light">18.02.2019</span>
                 <svg class="h-4 w-4 text-blue-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z"></path>
                   <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
@@ -1031,6 +594,6 @@ DEBUG:root:Response from response2 in fetch_additional_info: <!--begin of BY_CAD
 
 
 
-DEBUG:root:Fartobi: 381კვ.მ., Zoma: კვ.მ., Nakveti: არასასოფლო სამეურნეო, Misamarti: ქალაქი თბილისი , ქუჩა ნაფარეული , N 18, Sakutreba: თანასაკუთრება, Mesakutre: ბ.მ. ამხანაგობა  "ნაფარეული"
-INFO:root:Processing completed for input_kadastr=01.14.11.012.001
-INFO:werkzeug:127.0.0.1 - - [17/Dec/2023 14:48:45] "POST /api/getinformation HTTP/1.1" 200 -
+DEBUG:root:Fartobi: 350კვ.მ., Zoma: კვ.მ., Nakveti: არასასოფლო სამეურნეო, Misamarti: ქალაქი თბილისი, დაბა კოჯორი, იუნკერთა I შესახვევი, N 2, Sakutreba: საკუთრება, Mesakutre: გიორგი  მგალობლიშვილი
+INFO:root:Processing completed for input_kadastr=81.01.06.427
+INFO:werkzeug:127.0.0.1 - - [19/Dec/2023 00:37:46] "POST /api/getinformation HTTP/1.1" 200 -
